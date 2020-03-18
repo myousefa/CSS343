@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/pisan/bitbucket/pisan343/ass2-bst/bst.hpp
+algorithm
+-
+cmath
+-
+iomanip
+-
+iostream
+-
+queue
+-
+sstream
+-
+string
+-
+
+/Users/pisan/bitbucket/pisan343/ass2-bst/bsttest.cpp
+bst.hpp
+/Users/pisan/bitbucket/pisan343/ass2-bst/bst.hpp
+cassert
+-
+iostream
+-
+string
+-
+vector
+-
+
+/Users/pisan/bitbucket/pisan343/ass2-bst/main.cpp
+iostream
+-
+

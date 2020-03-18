@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -g -Wall -Wextra -Wno-sign-compare -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/pisan/homebrew/opt/llvm/lib CMakeFiles/ass2-bst.dir/main.cpp.o CMakeFiles/ass2-bst.dir/bsttest.cpp.o  -o ass2-bst 

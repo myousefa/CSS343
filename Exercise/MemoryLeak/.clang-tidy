@@ -1,0 +1,49 @@
+# Configuration options for clang-tidy
+# Mac LLVM version 9.0.0
+#
+# usage: clang-tidy *.cpp -- -std=c++14
+#
+#
+---
+# See https://clang.llvm.org/extra/clang-tidy/#using-clang-tidy for all possible checks
+Checks: '
+        *,
+        -fuchsia-*,
+        -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+        -google-build-using-namespace,-google-readability-braces-around-statements,
+        -readability-braces-around-statements,
+        -hicpp-braces-around-statements,
+        -hicpp-no-array-decay,
+        -modernize-use-trailing-return-type,
+        -cppcoreguidelines-pro-bounds-constant-array-index,
+        -google-global-names-in-headers,
+        -cppcoreguidelines-avoid-magic-numbers,
+        -google-runtime-references,
+        -readability-magic-numbers,
+'
+
+WarningsAsErrors:  '*'
+HeaderFilterRegex: '.*'
+
+# Based on LLVM style in https://llvm.org/docs/CodingStandards.html#the-low-level-issues
+# https://llvm.org/docs/Proposals/VariableNames.html
+CheckOptions:
+ - { key: readability-identifier-naming.ClassCase,           value: CamelCase  }
+ - { key: readability-identifier-naming.StructCase,          value: CamelCase  }
+ - { key: readability-identifier-naming.EnumCase,            value: CamelCase  }
+ - { key: readability-identifier-naming.VariableCase,        value: CamelCase  }
+ - { key: readability-identifier-naming.GlobalConstantCase,  value: UPPER_CASE }
+ - { key: readability-identifier-naming.FunctionCase,        value: camelBack  }
+ - { key: readability-identifier-naming.PublicMethodCase,    value: camelBack  }
+ - { key: readability-identifier-naming.PrivateMethodCase,   value: camelBack  }
+ - { key: readability-identifier-naming.PublicMemberCase,    value: CamelCase  }
+# Added 2019-09-25
+ - { key: readability-identifier-naming.ParameterCase,       value: CamelCase  }
+...
+
+# -hicpp-braces-around-statements - make code compact
+# -hicpp-no-array-decay - no warnings on assert
+# -modernize-use-trailing-return-type - not ready yet for 'auto func() -> int' format
+# -cppcoreguidelines-pro-bounds-constant-array-index - ok to use index, do nto want gsl::at yet
+# -google-global-names-in-headers - ok to have `using namespace std`
+

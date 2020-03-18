@@ -1,0 +1,1 @@
+./simplecompile.sh > output.txt 2>&1

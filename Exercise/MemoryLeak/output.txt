@@ -1,0 +1,174 @@
+Starting memory-leaks-r-us....
+Creating 0x7fffd6d0b4f0, total created: 1
+Creating 0x60200000eff0, total created: 2
+Creating 0x60f00000ef58, total created: 3
+Creating 0x60f00000ef68, total created: 4
+Creating 0x60f00000ef78, total created: 5
+Creating 0x60f00000ef88, total created: 6
+Creating 0x60f00000ef98, total created: 7
+Creating 0x60f00000efa8, total created: 8
+Creating 0x60f00000efb8, total created: 9
+Creating 0x60f00000efc8, total created: 10
+Creating 0x60f00000efd8, total created: 11
+Creating 0x60f00000efe8, total created: 12
+Creating 0x7fffd6d0b530, total created: 13
+Deleting: 0x7fffd6d0b530, nodes remaining: 12
+Creating 0x7fffd6d0b530, total created: 13
+Deleting: 0x7fffd6d0b530, nodes remaining: 12
+Creating 0x7fffd6d0b530, total created: 13
+Deleting: 0x7fffd6d0b530, nodes remaining: 12
+Creating 0x7fffd6d0b530, total created: 13
+Deleting: 0x7fffd6d0b530, nodes remaining: 12
+Creating 0x7fffd6d0b530, total created: 13
+Deleting: 0x7fffd6d0b530, nodes remaining: 12
+Creating 0x60200000efd0, total created: 13
+Deleting: 0x60200000efd0, nodes remaining: 12
+Creating 0x60200000efb0, total created: 13
+Deleting: 0x60200000efb0, nodes remaining: 12
+Creating 0x60200000ef90, total created: 13
+Deleting: 0x60200000ef90, nodes remaining: 12
+Creating 0x60200000ef70, total created: 13
+Deleting: 0x60200000ef70, nodes remaining: 12
+Deleting: 0x60200000eff0, nodes remaining: 11
+Deleting: 0x60f00000efe8, nodes remaining: 10
+Deleting: 0x60f00000efd8, nodes remaining: 9
+Deleting: 0x60f00000efc8, nodes remaining: 8
+Deleting: 0x60f00000efb8, nodes remaining: 7
+Deleting: 0x60f00000efa8, nodes remaining: 6
+Deleting: 0x60f00000ef98, nodes remaining: 5
+Deleting: 0x60f00000ef88, nodes remaining: 4
+Deleting: 0x60f00000ef78, nodes remaining: 3
+Deleting: 0x60f00000ef68, nodes remaining: 2
+Deleting: 0x60f00000ef58, nodes remaining: 1
+Deleting: 0x7fffd6d0b4f0, nodes remaining: 0
+Creating 0x60200000ef50, total created: 1
+Creating 0x60200000ef30, total created: 2
+Creating 0x60200000ef10, total created: 3
+Creating 0x60200000eef0, total created: 4
+Creating 0x60200000eed0, total created: 5
+Creating 0x60200000eeb0, total created: 6
+[N<100, 1>, N<1, 1>, N<8, 1>, N<27, 1>, N<64, 1>, N<125, 0>]
+Creating 0x60200000ee90, total created: 7
+Creating 0x60200000ee70, total created: 8
+Creating 0x60200000ee50, total created: 9
+Creating 0x60200000ee30, total created: 10
+Creating 0x60200000ee10, total created: 11
+[N<19, 1>, N<100, 1>, N<1, 1>, N<7, 1>, N<8, 1>, N<27, 1>, N<64, 1>, N<13, 1>, N<125, 1>, N<15, 1>, N<17, 0>]
+Deleting: 0x60200000ef10, nodes remaining: 10
+Deleting: 0x60200000ef50, nodes remaining: 9
+Deleting: 0x60200000ee10, nodes remaining: 8
+[N<1, 1>, N<7, 1>, N<27, 1>, N<64, 1>, N<13, 1>, N<125, 1>, N<15, 1>, N<17, 0>]
+Deleting: 0x60200000ef30, nodes remaining: 7
+Deleting: 0x60200000ee90, nodes remaining: 6
+Deleting: 0x60200000eef0, nodes remaining: 5
+Deleting: 0x60200000eed0, nodes remaining: 4
+Deleting: 0x60200000ee70, nodes remaining: 3
+Deleting: 0x60200000eeb0, nodes remaining: 2
+Deleting: 0x60200000ee50, nodes remaining: 1
+Deleting: 0x60200000ee30, nodes remaining: 0
+Everything is deleted. No leaked Memory/
+Created abc
+ --- Copied ---
+Created wxy
+ --- Copied ---
+ --- Copied ---
+ --- Copied ---
+ --- Copied ---
+ --- Copied ---
+ --- Copied ---
+test3 is done
+Successfully completed memory-leaks-r-us....
+
+=================================================================
+==5459==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 208 byte(s) in 2 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f2533246c8 in StringT3::StringT3(StringT3 const&) test3.cpp:9
+    #2 0x55f25332626c in void std::_Construct<StringT3, StringT3 const&>(StringT3*, StringT3 const&) /usr/include/c++/6/bits/stl_construct.h:75
+    #3 0x55f253326192 in StringT3* std::__uninitialized_copy<false>::__uninit_copy<StringT3 const*, StringT3*>(StringT3 const*, StringT3 const*, StringT3*) /usr/include/c++/6/bits/stl_uninitialized.h:75
+    #4 0x55f253326027 in StringT3* std::uninitialized_copy<StringT3 const*, StringT3*>(StringT3 const*, StringT3 const*, StringT3*) /usr/include/c++/6/bits/stl_uninitialized.h:126
+    #5 0x55f253325df8 in StringT3* std::__uninitialized_copy_a<StringT3 const*, StringT3*, StringT3>(StringT3 const*, StringT3 const*, StringT3*, std::allocator<StringT3>&) /usr/include/c++/6/bits/stl_uninitialized.h:281
+    #6 0x55f253325900 in StringT3* std::__uninitialized_move_if_noexcept_a<StringT3*, StringT3*, std::allocator<StringT3> >(StringT3*, StringT3*, StringT3*, std::allocator<StringT3>&) /usr/include/c++/6/bits/stl_uninitialized.h:304
+    #7 0x55f253324e6a in void std::vector<StringT3, std::allocator<StringT3> >::_M_emplace_back_aux<StringT3 const&>(StringT3 const&) /usr/include/c++/6/bits/vector.tcc:420
+    #8 0x55f253324a91 in std::vector<StringT3, std::allocator<StringT3> >::push_back(StringT3 const&) /usr/include/c++/6/bits/stl_vector.h:924
+    #9 0x55f253324102 in test3() test3.cpp:45
+    #10 0x55f253322a3a in main main.cpp:37
+    #11 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Direct leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f2533246c8 in StringT3::StringT3(StringT3 const&) test3.cpp:9
+    #2 0x55f25332626c in void std::_Construct<StringT3, StringT3 const&>(StringT3*, StringT3 const&) /usr/include/c++/6/bits/stl_construct.h:75
+    #3 0x55f253326192 in StringT3* std::__uninitialized_copy<false>::__uninit_copy<StringT3 const*, StringT3*>(StringT3 const*, StringT3 const*, StringT3*) /usr/include/c++/6/bits/stl_uninitialized.h:75
+    #4 0x55f253326027 in StringT3* std::uninitialized_copy<StringT3 const*, StringT3*>(StringT3 const*, StringT3 const*, StringT3*) /usr/include/c++/6/bits/stl_uninitialized.h:126
+    #5 0x55f253325df8 in StringT3* std::__uninitialized_copy_a<StringT3 const*, StringT3*, StringT3>(StringT3 const*, StringT3 const*, StringT3*, std::allocator<StringT3>&) /usr/include/c++/6/bits/stl_uninitialized.h:281
+    #6 0x55f253325900 in StringT3* std::__uninitialized_move_if_noexcept_a<StringT3*, StringT3*, std::allocator<StringT3> >(StringT3*, StringT3*, StringT3*, std::allocator<StringT3>&) /usr/include/c++/6/bits/stl_uninitialized.h:304
+    #7 0x55f253324e6a in void std::vector<StringT3, std::allocator<StringT3> >::_M_emplace_back_aux<StringT3 const&>(StringT3 const&) /usr/include/c++/6/bits/vector.tcc:420
+    #8 0x55f253324a91 in std::vector<StringT3, std::allocator<StringT3> >::push_back(StringT3 const&) /usr/include/c++/6/bits/stl_vector.h:924
+    #9 0x55f2533240ec in test3() test3.cpp:44
+    #10 0x55f253322a3a in main main.cpp:37
+    #11 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Direct leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f253324888 in StringT3::StringT3() test3.cpp:9
+    #2 0x55f253323f3b in test3() test3.cpp:33
+    #3 0x55f253322a3a in main main.cpp:37
+    #4 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Direct leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f2533246c8 in StringT3::StringT3(StringT3 const&) test3.cpp:9
+    #2 0x55f253325689 in void __gnu_cxx::new_allocator<StringT3>::construct<StringT3, StringT3 const&>(StringT3*, StringT3 const&) /usr/include/c++/6/ext/new_allocator.h:120
+    #3 0x55f253324d65 in void std::allocator_traits<std::allocator<StringT3> >::construct<StringT3, StringT3 const&>(std::allocator<StringT3>&, StringT3*, StringT3 const&) /usr/include/c++/6/bits/alloc_traits.h:475
+    #4 0x55f253324df2 in void std::vector<StringT3, std::allocator<StringT3> >::_M_emplace_back_aux<StringT3 const&>(StringT3 const&) /usr/include/c++/6/bits/vector.tcc:416
+    #5 0x55f253324a91 in std::vector<StringT3, std::allocator<StringT3> >::push_back(StringT3 const&) /usr/include/c++/6/bits/stl_vector.h:924
+    #6 0x55f2533240d6 in test3() test3.cpp:43
+    #7 0x55f253322a3a in main main.cpp:37
+    #8 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Direct leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f253324510 in StringT3::StringT3(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) test3.cpp:9
+    #2 0x55f253324045 in test3() test3.cpp:38
+    #3 0x55f253322a3a in main main.cpp:37
+    #4 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Direct leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f2533246c8 in StringT3::StringT3(StringT3 const&) test3.cpp:9
+    #2 0x55f253323f62 in test3() test3.cpp:35
+    #3 0x55f253322a3a in main main.cpp:37
+    #4 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Direct leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f2533246c8 in StringT3::StringT3(StringT3 const&) test3.cpp:9
+    #2 0x55f253325689 in void __gnu_cxx::new_allocator<StringT3>::construct<StringT3, StringT3 const&>(StringT3*, StringT3 const&) /usr/include/c++/6/ext/new_allocator.h:120
+    #3 0x55f253324d65 in void std::allocator_traits<std::allocator<StringT3> >::construct<StringT3, StringT3 const&>(std::allocator<StringT3>&, StringT3*, StringT3 const&) /usr/include/c++/6/bits/alloc_traits.h:475
+    #4 0x55f253324df2 in void std::vector<StringT3, std::allocator<StringT3> >::_M_emplace_back_aux<StringT3 const&>(StringT3 const&) /usr/include/c++/6/bits/vector.tcc:416
+    #5 0x55f253324a91 in std::vector<StringT3, std::allocator<StringT3> >::push_back(StringT3 const&) /usr/include/c++/6/bits/stl_vector.h:924
+    #6 0x55f2533240ec in test3() test3.cpp:44
+    #7 0x55f253322a3a in main main.cpp:37
+    #8 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Direct leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f253324510 in StringT3::StringT3(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) test3.cpp:9
+    #2 0x55f253323ed2 in test3() test3.cpp:32
+    #3 0x55f253322a3a in main main.cpp:37
+    #4 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Direct leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f0b731e2d70 in operator new[](unsigned long) (/usr/lib/x86_64-linux-gnu/libasan.so.3+0xc2d70)
+    #1 0x55f2533246c8 in StringT3::StringT3(StringT3 const&) test3.cpp:9
+    #2 0x55f253325689 in void __gnu_cxx::new_allocator<StringT3>::construct<StringT3, StringT3 const&>(StringT3*, StringT3 const&) /usr/include/c++/6/ext/new_allocator.h:120
+    #3 0x55f253324d65 in void std::allocator_traits<std::allocator<StringT3> >::construct<StringT3, StringT3 const&>(std::allocator<StringT3>&, StringT3*, StringT3 const&) /usr/include/c++/6/bits/alloc_traits.h:475
+    #4 0x55f253324df2 in void std::vector<StringT3, std::allocator<StringT3> >::_M_emplace_back_aux<StringT3 const&>(StringT3 const&) /usr/include/c++/6/bits/vector.tcc:416
+    #5 0x55f253324a91 in std::vector<StringT3, std::allocator<StringT3> >::push_back(StringT3 const&) /usr/include/c++/6/bits/stl_vector.h:924
+    #6 0x55f253324102 in test3() test3.cpp:45
+    #7 0x55f253322a3a in main main.cpp:37
+    #8 0x7f0b725042e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+SUMMARY: AddressSanitizer: 1040 byte(s) leaked in 10 allocation(s).

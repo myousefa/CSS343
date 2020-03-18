@@ -1,0 +1,1 @@
+clang++ *.cpp -std=c++14 -o prog -g

@@ -1,0 +1,149 @@
+===================================================================
+Recommended Usage: ./simplecompile.sh > output.txt 2>&1
+===================================================================
+Mon Feb 10 22:38:36 PST 2020
+Darwin Mohammeds-MacBook-Pro.local 19.0.0 Darwin Kernel Version 19.0.0: Thu Oct 17 16:17:15 PDT 2019; root:xnu-6153.41.3~29/RELEASE_X86_64 x86_64
+uid=501(ali) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),701(com.apple.sharepoint.group.1),33(_appstore),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
+===================================================================
+*** compiling with clang++ to create an executable called myprogram
+===================================================================
+Apple clang version 11.0.0 (clang-1100.0.33.12)
+Target: x86_64-apple-darwin19.0.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+===================================================================
+*** running myprogram
+testGraph0DFS
+testGraph0BFS
+testGraph0Dijkstra
+testGraph0NotDirected
+testGraph1
+Done!
+===================================================================
+*** running clang-tidy using options from .clang-tidy
+*** fix all warnings, modify .clang-tidy if necessary
+*** explain all changes to .clang-tidy in README
+LLVM (http://llvm.org/):
+  LLVM version 9.0.0
+  Optimized build.
+  Default target: x86_64-apple-darwin19.0.0
+  Host CPU: skylake
+25241 warnings generated.
+47572 warnings generated.
+67354 warnings generated.
+81543 warnings generated.
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-graph-myousefa/graph.h:91:43: warning: non-const reference parameter 'V', make it const or use a pointer [google-runtime-references]
+  bool find(const string &Label, Vertex *&V) const;
+                                          ^
+Suppressed 81542 warnings (81541 in non-user code, 1 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+===================================================================
+*** generating new .clang-format based on LLVM style
+*** running clang-format for formatting suggestions
+*** examine all suggestions, fix selectively
+*** formatting suggestions for ./edge.cpp
+:013 OLD:  **/ 
+:    NEW:  **/
+*** formatting suggestions for ./graph.cpp
+:016 OLD:  **/  
+:    NEW:  **/
+:026 OLD:  * @param: No Param 
+:    NEW:  * @param: No Param
+:028 OLD:  **/  
+:    NEW:  **/
+:046 OLD:  **/  
+:    NEW:  **/
+:068 OLD:  * This function returns the number of verticies in graph 
+:    NEW:  * This function returns the number of verticies in graph
+:070 OLD:  * @return: Return NumVertices  
+:071 OLD:  **/  
+:    NEW:  * @return: Return NumVertices
+:    NEW:  **/
+:075 OLD:  * This function returns the number of edges in graph 
+:    NEW:  * This function returns the number of edges in graph
+:078 OLD:  **/  
+:    NEW:  **/
+:082 OLD:  * This function returns the amount of vertices adjacent to label 
+:    NEW:  * This function returns the amount of vertices adjacent to label
+:086 OLD:  **/  
+:    NEW:  **/
+:096 OLD:  * This function adds verticies to graph 
+:097 OLD:  * @param: string refrence label 
+:    NEW:  * This function adds verticies to graph
+:    NEW:  * @param: string refrence label
+:099 OLD:  **/  
+:    NEW:  **/
+:103 OLD:     Vertices.push_back(Vert); 
+:    NEW:     Vertices.push_back(Vert);
+:111 OLD:  * This function check if a specific vertex is in graph 
+:112 OLD:  * @param: string refrence label 
+:    NEW:  * This function check if a specific vertex is in graph
+:    NEW:  * @param: string refrence label
+:114 OLD:  **/  
+:    NEW:  **/
+:118 OLD:       return true; 
+:    NEW:       return true;
+:126 OLD:  * @param: string refrence label 
+:127 OLD:  * @return: Return string type of details of what is in label and empty string if nothing is found
+:128 OLD:  **/  
+:    NEW:  * @param: string refrence label
+:    NEW:  * @return: Return string type of details of what is in label and empty string
+:    NEW:  *if nothing is found
+:    NEW:  **/
+:135 OLD:     } 
+:    NEW:     }
+:138 OLD:     for (auto It = Vert->Neighbors.begin() + 1; It != Vert->Neighbors.end(); 
+:    NEW:     for (auto It = Vert->Neighbors.begin() + 1; It != Vert->Neighbors.end();
+:150 OLD:  * This function connects two verticies together 
+:    NEW:  * This function connects two verticies together
+:153 OLD:  **/  
+:    NEW:  **/
+:218 OLD:  * @param: string refrence from and to 
+:219 OLD:  * @return: return true or false if disconnection was successful and false if not 
+:220 OLD:  **/ 
+:    NEW:  * @param: string refrence from and to
+:    NEW:  * @return: return true or false if disconnection was successful and false if
+:    NEW:  *not
+:    NEW:  **/
+:254 OLD:  **/ 
+:    NEW:  **/
+:270 OLD:  **/ 
+:    NEW:  **/
+:298 OLD:  * @param: String startLabel 
+:    NEW:  * @param: String startLabel
+:300 OLD:  **/ 
+:    NEW:  **/
+*** formatting suggestions for ./graphtest.cpp
+*** formatting suggestions for ./main.cpp
+*** formatting suggestions for ./vertex.cpp
+:022 OLD:  * @return: Os 
+:023 OLD:  **/  
+:    NEW:  * @return: Os
+:    NEW:  **/
+:032 OLD:  * @return: Os 
+:033 OLD:  **/ 
+:    NEW:  * @return: Os
+:    NEW:  **/
+:036 OLD:   Visited = false; 
+:    NEW:   Visited = false;
+:042 OLD:  * @return: No return 
+:043 OLD:  **/ 
+:    NEW:  * @return: No return
+:    NEW:  **/
+===================================================================
+*** ERROR valgrind is not available on this system
+===================================================================
+*** compiling with clang++ to checking for memory leaks
+===================================================================
+*** running myprogram with memory checking
+==35940==AddressSanitizer: detect_leaks is not supported on this platform.
+./simplecompile.sh: line 168: 35940 Abort trap: 6           ASAN_OPTIONS=detect_leaks=1 ./myprogram
+---> Last command executed failed with exitcode code: 134
+===================================================================
+*** using --analyze option for clang++ to detect issues
+===================================================================
+*** cleaning up, deleting myprogram, myprogram.dSYM and core
+===================================================================
+Mon Feb 10 22:39:23 PST 2020
+===================================================================
+./simplecompile.sh exiting with 134

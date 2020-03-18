@@ -1,0 +1,65 @@
+===================================================================
+Recommended Usage: ./simplecompile.sh > output.txt 2>&1
+===================================================================
+Sun Jan 12 20:37:16 PST 2020
+Darwin Mohammeds-MacBook-Pro.local 19.0.0 Darwin Kernel Version 19.0.0: Thu Oct 17 16:17:15 PDT 2019; root:xnu-6153.41.3~29/RELEASE_X86_64 x86_64
+uid=501(ali) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),701(com.apple.sharepoint.group.1),33(_appstore),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
+===================================================================
+*** compiling with clang++ to create an executable called myprogram
+===================================================================
+Apple clang version 11.0.0 (clang-1100.0.33.12)
+Target: x86_64-apple-darwin19.0.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+===================================================================
+*** running myprogram
+Result = 1
+test01 complete
+Result = 1
+Test02 complete
+Result = 2
+Test03 complete
+Result = 120
+Test04 complete
+Test05 complete
+TestAll complete
+Done!
+===================================================================
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 9.0.0
+  Optimized build.
+  Default target: x86_64-apple-darwin19.0.0
+  Host CPU: skylake
+21884 warnings generated.
+44090 warnings generated.
+65954 warnings generated.
+Suppressed 65954 warnings (65954 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+===================================================================
+*** running clang-format format formatting suggestions
+*** generating new .clang-format baed on LLVM style
+*** formatting suggestions for ./factorial.cpp
+*** formatting suggestions for ./factorialtest.cpp
+23d22
+< 
+*** formatting suggestions for ./main.cpp
+15d14
+< 
+22d20
+< 
+===================================================================
+*** ERROR valgrind is not available on this system
+===================================================================
+*** compiling with clang++ to checking for memory leaks
+===================================================================
+*** running myprogram with memory checking
+==1138==AddressSanitizer: detect_leaks is not supported on this platform.
+./simplecompile.sh: line 132:  1138 Abort trap: 6           ASAN_OPTIONS=detect_leaks=1 ./myprogram
+---> Last command executed failed with exitcode code: 134
+===================================================================
+*** cleaning up, deleting myprogram
+===================================================================
+Sun Jan 12 20:37:41 PST 2020
+===================================================================
+Exiting with 134

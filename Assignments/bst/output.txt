@@ -1,0 +1,175 @@
+===================================================================
+Recommended Usage: ./simplecompile.sh > output.txt 2>&1
+===================================================================
+Mon Jan 27 23:43:50 PST 2020
+Darwin Mohammeds-MacBook-Pro.local 19.0.0 Darwin Kernel Version 19.0.0: Thu Oct 17 16:17:15 PDT 2019; root:xnu-6153.41.3~29/RELEASE_X86_64 x86_64
+uid=501(ali) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),701(com.apple.sharepoint.group.1),33(_appstore),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
+===================================================================
+*** compiling with clang++ to create an executable called myprogram
+===================================================================
+Apple clang version 11.0.0 (clang-1100.0.33.12)
+Target: x86_64-apple-darwin19.0.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+===================================================================
+*** running myprogram
+Starting testPisan01
+* Testing == and !=
+Ending testPisan01
+Starting testPisan02
+* Testing == and != with more detail
+Ending testPisan02
+Starting testPisan03
+* Testing traversal
+Assertion failed: (TreeVisitor::getSS() == Result), function testPisan03, file ./bsttest.cpp, line 142.
+Nothing in Root can't do this 
+Nothing in Root can't do this 
+./simplecompile.sh: line 79: 69921 Abort trap: 6           ./myprogram
+---> Last command executed failed with exitcode code: 134
+===================================================================
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 9.0.0
+  Optimized build.
+  Default target: x86_64-apple-darwin19.0.0
+  Host CPU: skylake
+22808 warnings generated.
+45421 warnings generated.
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:36:10: warning: constructor does not initialize these fields: Left, Right [hicpp-member-init]
+  struct Node {
+         ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:55:10: warning: invalid case style for variable 'createNode' [readability-identifier-naming]
+    auto createNode = new Node;
+         ^~~~~~~~~~
+         CreateNode
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:74:7: warning: do not use 'else' after 'return' [readability-else-after-return]
+      else if (Parent.Left != nullptr){
+      ^~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:83:7: warning: do not use 'else' after 'return' [readability-else-after-return]
+      else if (Parent.Right != nullptr) {
+      ^~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:207:5: warning: do not use 'else' after 'return' [readability-else-after-return]
+    else {
+    ^~~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:213:7: warning: do not use 'else' after 'return' [readability-else-after-return]
+      else {
+      ^~~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:230:9: warning: Forming reference to null pointer [clang-analyzer-core.NonNullParamChecker]
+    if (Root->Data != Root2->Data) {
+        ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bsttest.cpp:173:3: note: Calling 'testPisan02'
+  testPisan02();
+  ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bsttest.cpp:96:15: note: Calling default constructor for 'BST<std::__1::basic_string<char>>'
+  BST<string> B2;
+              ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:462:5: note: Null pointer value stored to 'B2.Root'
+    Root = nullptr;
+    ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bsttest.cpp:96:15: note: Returning from default constructor for 'BST<std::__1::basic_string<char>>'
+  BST<string> B2;
+              ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bsttest.cpp:107:10: note: Calling 'BST::operator=='
+  assert(B1 == B2 && (!(B1 != B2)));
+         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:632:33: note: Passing null pointer value via 2nd parameter 'Root2'
+    return operatorEquals(Root, Other.Root);
+                                ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:632:12: note: Calling 'BST::operatorEquals'
+    return operatorEquals(Root, Other.Root);
+           ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:227:25: note: Left side of '&&' is false
+    if (Root == nullptr && Root2 == nullptr) {
+                        ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:230:9: note: Forming reference to null pointer
+    if (Root->Data != Root2->Data) {
+        ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:260:25: warning: do not declare C-style arrays, use std::array<> instead [modernize-avoid-c-arrays]
+  void arrayToBST(const T Arr[], int N) {
+                        ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:294:7: warning: do not use 'else' after 'return' [readability-else-after-return]
+      else {
+      ^~~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:322:20: warning: do not declare C-style arrays, use std::array<> instead [hicpp-avoid-c-arrays]
+  void *rebalancer(T Contents[], int NumberOfNodes) {
+                   ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:339:41: warning: do not declare C-style arrays, use std::array<> instead [hicpp-avoid-c-arrays]
+  Node* finalBst(int Start, int Finish, T Contents[]) { 
+                                        ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:352:33: warning: do not declare C-style arrays, use std::array<> instead [cppcoreguidelines-avoid-c-arrays]
+  void arrayBuilder(Node *Root, T Array[], int *Counter) const {
+                                ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:480:13: warning: do not declare C-style arrays, use std::array<> instead [modernize-avoid-c-arrays]
+  BST(const T Arr[], int N) {
+            ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:545:5: warning: do not use 'else' after 'return' [readability-else-after-return]
+    else {
+    ^~~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-bst-myousefa/bst.hpp:570:5: warning: do not use 'else' after 'return' [readability-else-after-return]
+    else { 
+    ^~~~~~~
+Suppressed 45360 warnings (45354 in non-user code, 6 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+===================================================================
+*** running clang-format format formatting suggestions
+*** generating new .clang-format based on LLVM style
+*** formatting suggestions for ./bsttest.cpp
+25,27d24
+< 
+< 
+< 
+44,50c41,43
+<   static string getSS() {
+<     return SS.str();
+<   }
+< 
+<   static void resetSS() {
+<     SS.str(string());
+<   }
+---
+>   static string getSS() { return SS.str(); }
+> 
+>   static void resetSS() { SS.str(string()); }
+52,54c45
+<   static void visitor(const string &Item) {
+<     SS << Item;
+<   }
+---
+>   static void visitor(const string &Item) { SS << Item; }
+57,59c48
+<   static void visitor(const int &Item) {
+<     SS << Item;
+<   }
+---
+>   static void visitor(const int &Item) { SS << Item; }
+*** formatting suggestions for ./main.cpp
+19d18
+< 
+===================================================================
+*** ERROR valgrind is not available on this system
+===================================================================
+*** compiling with clang++ to checking for memory leaks
+===================================================================
+*** running myprogram with memory checking
+==69955==AddressSanitizer: detect_leaks is not supported on this platform.
+./simplecompile.sh: line 148: 69955 Abort trap: 6           ASAN_OPTIONS=detect_leaks=1 ./myprogram
+---> Last command executed failed with exitcode code: 134
+===================================================================
+*** using --analyze option for clang++ to detect issues
+warning: Path diagnostic report is not generated. Current output format does not support diagnostics that cross file boundaries. Refer to --analyzer-output for valid output formats
+warning: Path diagnostic report is not generated. Current output format does not support diagnostics that cross file boundaries. Refer to --analyzer-output for valid output formats
+In file included from ./bsttest.cpp:19:
+./bst.hpp:230:9: warning: Forming reference to null pointer
+    if (Root->Data != Root2->Data) {
+        ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+---> grep found a warning message, setting exitcode to 1
+===================================================================
+*** cleaning up, deleting myprogram
+===================================================================
+Mon Jan 27 23:44:09 PST 2020
+===================================================================
+Exiting with 1

@@ -1,0 +1,2410 @@
+Thu Mar 12 23:33:16 PDT 2020
+Darwin Mohammeds-MacBook-Pro.local 19.3.0 Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64 x86_64
+uid=501(ali) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),701(com.apple.sharepoint.group.1),33(_appstore),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
+*** compiling with clang++ to create an executable called myprogram
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin19.3.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+Customer.cpp:22:9: warning: delete called on non-final 'Transaction' that has virtual functions but non-virtual destructor [-Wdelete-non-abstract-non-virtual-dtor]
+        delete temp;
+        ^
+1 warning generated.
+Store.cpp:9:9: warning: delete called on non-final 'Transaction' that has virtual functions but non-virtual destructor [-Wdelete-non-abstract-non-virtual-dtor]
+        delete Temp;
+        ^
+Store.cpp:97:13: warning: delete called on non-final 'Transaction' that has virtual functions but non-virtual destructor [-Wdelete-non-abstract-non-virtual-dtor]
+            delete Trans;
+            ^
+Store.cpp:196:13: warning: delete called on non-final 'Transaction' that has virtual functions but non-virtual destructor [-Wdelete-non-abstract-non-virtual-dtor]
+            delete Temp;
+            ^
+Store.cpp:200:13: warning: delete called on non-final 'Transaction' that has virtual functions but non-virtual destructor [-Wdelete-non-abstract-non-virtual-dtor]
+            delete Temp;
+            ^
+4 warnings generated.
+*** running myprogram
+Start testStore1
+End testStore1
+Start testStore2
+End testStore2
+=====================================
+Start testStoreFinal
+End testStoreFinal
+=====================================
+Done.
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 9.0.0
+  Optimized build.
+  Default target: x86_64-apple-darwin19.3.0
+  Host CPU: skylake
+24524 warnings generated.
+47269 warnings generated.
+70003 warnings generated.
+93544 warnings generated.
+116240 warnings generated.
+139720 warnings generated.
+163253 warnings generated.
+186738 warnings generated.
+209472 warnings generated.
+232215 warnings generated.
+255822 warnings generated.
+280821 warnings generated.
+304305 warnings generated.
+328847 warnings generated.
+348629 warnings generated.
+372819 warnings generated.
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.cpp:72:1: warning: method 'Borrow::getTitleMovie' has a similar name and the same signature as virtual method 'Transaction::GetTitleMovie'; did you mean to override it? [bugprone-virtual-near-miss]
+Movie* Borrow::getTitleMovie() const {
+^              ~~~~~~~~~~~~~
+               GetTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:35:22: warning: all parameters should be named in a function [readability-named-parameter]
+        Borrow(Movie*, int);
+                     ^
+                      /*Mov*/  /*ID*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:49:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [hicpp-use-override]
+        virtual bool SetData(ifstream&);
+        ~~~~~~~~     ^
+                                        override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:49:39: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual bool SetData(ifstream&);
+                                      ^
+                                       /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:56:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [hicpp-use-override]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+        ~~~~~~~~     ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:56:64: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+                                                               ^
+                                                                /*Mov*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:64:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [cppcoreguidelines-explicit-virtual-functions]
+        virtual char GetCommand() const;
+        ~~~~~~~~     ^
+                                        override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:71:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [cppcoreguidelines-explicit-virtual-functions]
+        virtual void Display() const;
+        ~~~~~~~~     ^
+                                     override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:78:9: warning: method 'Borrow::getTitleMovie' has a similar name and the same signature as virtual method 'Transaction::GetTitleMovie'; did you mean to override it? [bugprone-virtual-near-miss]
+        Movie* getTitleMovie() const;
+        ^      ~~~~~~~~~~~~~
+               GetTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:80:20: warning: member variable 'Command' has protected visibility [cppcoreguidelines-non-private-member-variables-in-classes]
+        const char Command = 'B';
+                   ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Borrow.h:83:16: warning: invalid case style for member 'titleMovie' [readability-identifier-naming]
+        Movie* titleMovie;
+               ^~~~~~~~~~
+               TitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.cpp:21:10: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+Classic::~Classic() {}
+         ^          ~~
+                    = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.cpp:41:16: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    const auto temp = dynamic_cast<const Classic&>(Movies);
+               ^~~~
+               Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.cpp:59:16: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    const auto temp = dynamic_cast<const Classic&>(Movies);
+               ^~~~
+               Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.cpp:75:12: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    string temp;
+           ^~~~
+           Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:33:9: warning: annotate this function with 'override' or (rarely) 'final' [hicpp-use-override]
+        ~Classic();
+        ^
+                   override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:40:16: warning: annotate this function with 'override' or (rarely) 'final' [hicpp-use-override]
+        string GetGenre();
+               ^
+                          override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:47:14: warning: annotate this function with 'override' or (rarely) 'final' [hicpp-use-override]
+        bool SetData(ifstream&);
+             ^
+                                override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:47:31: warning: all parameters should be named in a function [readability-named-parameter]
+        bool SetData(ifstream&);
+                              ^
+                               /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:48:14: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+        void SetTransactionData(ifstream&);
+             ^
+                                           override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:48:42: warning: all parameters should be named in a function [readability-named-parameter]
+        void SetTransactionData(ifstream&);
+                                         ^
+                                          /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:55:14: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        bool operator==(const Movie&) const;
+             ^
+                                            override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:55:37: warning: all parameters should be named in a function [readability-named-parameter]
+        bool operator==(const Movie&) const;
+                                    ^
+                                     /*Movies*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:56:14: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+        bool operator<(const Movie&) const;
+             ^
+                                           override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:56:36: warning: all parameters should be named in a function [readability-named-parameter]
+        bool operator<(const Movie&) const;
+                                   ^
+                                    /*Movies*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:63:14: warning: annotate this function with 'override' or (rarely) 'final' [hicpp-use-override]
+        void Display() const;
+             ^
+                             override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Classic.h:64:16: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+        string TransactionDisplay() const;
+               ^
+                                          override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.cpp:17:9: warning: use '= default' to define a trivial default constructor [modernize-use-equals-default]
+Comedy::Comedy() {}
+        ^        ~~
+                 = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.cpp:27:9: warning: use '= default' to define a trivial destructor [modernize-use-equals-default]
+Comedy::~Comedy() {}
+        ^         ~~
+                  = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.cpp:39:16: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    const auto temp = dynamic_cast<const Comedy&>(Movies);
+               ^~~~
+               Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.cpp:50:16: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    const auto temp = dynamic_cast<const Comedy&>(Movies);
+               ^~~~
+               Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.cpp:56:12: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    string temp;
+           ^~~~
+           Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:32:19: warning: all parameters should be named in a function [readability-named-parameter]
+        Comedy(int, const string&, const string&, int);
+                  ^
+                   /*Stk*/        /*Drtr*/       /*Ttle*/  /*Yea*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:39:9: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+        ~Comedy();
+        ^
+                  override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:46:16: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        string GetGenre();
+               ^
+                          override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:53:14: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        void SetTransactionData(ifstream&);
+             ^
+                                           override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:53:42: warning: all parameters should be named in a function [readability-named-parameter]
+        void SetTransactionData(ifstream&);
+                                         ^
+                                          /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:60:14: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+        bool operator==(const Movie&) const;
+             ^
+                                            override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:60:37: warning: all parameters should be named in a function [readability-named-parameter]
+        bool operator==(const Movie&) const;
+                                    ^
+                                     /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:61:14: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        bool operator<(const Movie&) const;
+             ^
+                                           override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:61:36: warning: all parameters should be named in a function [readability-named-parameter]
+        bool operator<(const Movie&) const;
+                                   ^
+                                    /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Comedy.h:68:16: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+        string TransactionDisplay() const;
+               ^
+                                          override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.cpp:21:15: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    for (auto temp: History) {
+              ^~~~
+              Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.cpp:26:15: warning: invalid case style for public method 'GetID' [readability-identifier-naming]
+int Customer::GetID() {
+              ^~~~~
+              getId
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.cpp:30:16: warning: invalid case style for public method 'AddTransactionHistory' [readability-identifier-naming]
+void Customer::AddTransactionHistory(Transaction* Trans){
+               ^~~~~~~~~~~~~~~~~~~~~
+               addTransactionHistory
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.cpp:34:16: warning: invalid case style for public method 'DisplayHistory' [readability-identifier-naming]
+void Customer::DisplayHistory(){
+               ^~~~~~~~~~~~~~
+               displayHistory
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.cpp:36:15: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    for (auto temp: History) {
+              ^~~~
+              Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.cpp:41:16: warning: invalid case style for public method 'SetData' [readability-identifier-naming]
+bool Customer::SetData(ifstream& FileName) {
+               ^~~~~~~
+               setData
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.cpp:49:15: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    for (auto temp : History) {
+              ^~~~
+              Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.h:44:13: warning: invalid case style for public method 'GetID' [readability-identifier-naming]
+        int GetID();
+            ^~~~~
+            getId
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.h:51:14: warning: invalid case style for public method 'AddTransactionHistory' [readability-identifier-naming]
+        void AddTransactionHistory(Transaction*);
+             ^~~~~~~~~~~~~~~~~~~~~
+             addTransactionHistory
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.h:51:48: warning: all parameters should be named in a function [readability-named-parameter]
+        void AddTransactionHistory(Transaction*);
+                                               ^
+                                                /*Trans*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.h:58:14: warning: invalid case style for public method 'DisplayHistory' [readability-identifier-naming]
+        void DisplayHistory();
+             ^~~~~~~~~~~~~~
+             displayHistory
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.h:65:14: warning: invalid case style for public method 'SetData' [readability-identifier-naming]
+        bool SetData(ifstream&);
+             ^~~~~~~
+             setData
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.h:65:31: warning: all parameters should be named in a function [readability-named-parameter]
+        bool SetData(ifstream&);
+                              ^
+                               /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Customer.h:72:31: warning: all parameters should be named in a function [readability-named-parameter]
+        bool isBorrowed(Movie*);
+                              ^
+                               /*Mov*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.cpp:17:8: warning: use '= default' to define a trivial default constructor [modernize-use-equals-default]
+Drama::Drama() {}
+       ^       ~~
+               = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.cpp:19:8: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+Drama::~Drama() {}
+       ^        ~~
+                = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.cpp:30:16: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    const auto temp = dynamic_cast<const Drama&>(Movies);
+               ^~~~
+               Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.cpp:38:16: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    const auto temp = dynamic_cast<const Drama&>(Movies);
+               ^~~~
+               Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.cpp:45:12: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    string temp;
+           ^~~~
+           Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:32:9: warning: annotate this function with 'override' or (rarely) 'final' [hicpp-use-override]
+        ~Drama();
+        ^
+                 override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:39:16: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        string GetGenre();
+               ^
+                          override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:46:14: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        void SetTransactionData(ifstream&);
+             ^
+                                           override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:46:42: warning: all parameters should be named in a function [readability-named-parameter]
+        void SetTransactionData(ifstream&);
+                                         ^
+                                          /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:53:14: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        bool operator==(const Movie&) const;
+             ^
+                                            override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:53:37: warning: all parameters should be named in a function [readability-named-parameter]
+        bool operator==(const Movie&) const;
+                                    ^
+                                     /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:54:14: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        bool operator<(const Movie&) const;
+             ^
+                                           override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:54:36: warning: all parameters should be named in a function [readability-named-parameter]
+        bool operator<(const Movie&) const;
+                                   ^
+                                    /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Drama.h:61:16: warning: annotate this function with 'override' or (rarely) 'final' [cppcoreguidelines-explicit-virtual-functions]
+        string TransactionDisplay() const;
+               ^
+                                          override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.cpp:14:1: warning: constructor does not initialize these fields: Table [hicpp-member-init]
+HashTable::HashTable() {
+^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.cpp:16:5: warning: use range-based for loop instead [modernize-loop-convert]
+    for (int I = 0; I < MAXENTRIES; I++) { 
+    ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        (auto & I : Table)
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.cpp:25:17: warning: invalid case style for public method 'Add' [readability-identifier-naming]
+bool HashTable::Add(Customer* Cstmr) {
+                ^~~
+                add
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.cpp:39:16: warning: invalid case style for public method 'Hash' [readability-identifier-naming]
+int HashTable::Hash(int Cstmr) const {
+               ^~~~
+               hash
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.cpp:39:16: warning: method 'Hash' can be made static [readability-convert-member-functions-to-static]
+int HashTable::Hash(int Cstmr) const {
+               ^               ~~~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.cpp:43:22: warning: invalid case style for public method 'GetItem' [readability-identifier-naming]
+Customer* HashTable::GetItem(int Cstmr) const {
+                     ^~~~~~~
+                     getItem
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.cpp:51:15: warning: invalid case style for variable 'temp' [readability-identifier-naming]
+    for (auto temp : Table) {
+              ^~~~
+              Temp
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.h:39:13: warning: invalid case style for public method 'Hash' [readability-identifier-naming]
+        int Hash(int) const;
+            ^~~~
+            hash
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.h:39:21: warning: all parameters should be named in a function [readability-named-parameter]
+        int Hash(int) const;
+                    ^
+                     /*Cstmr*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.h:46:14: warning: invalid case style for public method 'Add' [readability-identifier-naming]
+        bool Add(Customer*); 
+             ^~~
+             add
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.h:46:27: warning: all parameters should be named in a function [readability-named-parameter]
+        bool Add(Customer*); 
+                          ^
+                           /*Cstmr*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.h:53:19: warning: invalid case style for public method 'GetItem' [readability-identifier-naming]
+        Customer* GetItem(int) const;
+                  ^~~~~~~
+                  getItem
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.h:53:30: warning: all parameters should be named in a function [readability-named-parameter]
+        Customer* GetItem(int) const;
+                             ^
+                              /*Cstmr*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/HashTable.h:63:9: warning: do not declare C-style arrays, use std::array<> instead [hicpp-avoid-c-arrays]
+        Customer *Table[MAXENTRIES];
+        ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.cpp:17:10: warning: use '= default' to define a trivial destructor [modernize-use-equals-default]
+History::~History() {}
+         ^          ~~
+                    = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.cpp:25:57: warning: all parameters should be named in a function [readability-named-parameter]
+void History::DoTransactionCommand(const vector<Movie*>&, 
+                                                        ^
+                                                         /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.cpp:29:9: warning: implicit conversion 'Customer *' -> bool [readability-implicit-bool-conversion]
+    if (C) {
+        ^
+          != nullptr
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.cpp:41:1: warning: method 'History::getTitleMovie' has a similar name and the same signature as virtual method 'Transaction::GetTitleMovie'; did you mean to override it? [bugprone-virtual-near-miss]
+Movie* History::getTitleMovie() const
+^               ~~~~~~~~~~~~~
+                GetTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.cpp:41:17: warning: method 'getTitleMovie' can be made static [readability-convert-member-functions-to-static]
+Movie* History::getTitleMovie() const
+                ^               ~~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:14:1: warning: #includes are not sorted properly [llvm-include-order]
+#include "Transaction.h"
+^        ~~~~~~~~~~~~~~~
+         "HashTable.h"
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:42:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [hicpp-use-override]
+        virtual bool SetData(ifstream&);
+        ~~~~~~~~     ^
+                                        override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:42:39: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual bool SetData(ifstream&);
+                                      ^
+                                       /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:49:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [modernize-use-override]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+        ~~~~~~~~     ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:49:64: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+                                                               ^
+                                                                /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:57:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [hicpp-use-override]
+        virtual char GetCommand() const;
+        ~~~~~~~~     ^
+                                        override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:64:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [cppcoreguidelines-explicit-virtual-functions]
+        virtual void Display() const;
+        ~~~~~~~~     ^
+                                     override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:71:9: warning: method 'History::getTitleMovie' has a similar name and the same signature as virtual method 'Transaction::GetTitleMovie'; did you mean to override it? [bugprone-virtual-near-miss]
+        Movie* getTitleMovie() const;
+        ^      ~~~~~~~~~~~~~
+               GetTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/History.h:74:20: warning: member variable 'Command' has protected visibility [cppcoreguidelines-non-private-member-variables-in-classes]
+        const char Command = 'H';
+                   ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.cpp:13:12: warning: use '= default' to define a trivial default constructor [hicpp-use-equals-default]
+Inventory::Inventory() {}
+           ^           ~~
+                       = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.cpp:15:12: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+Inventory::~Inventory() {}
+           ^            ~~
+                        = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.cpp:17:34: warning: all parameters should be named in a function [readability-named-parameter]
+bool Inventory::SetData(ifstream&) {
+                                 ^
+                                  /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.cpp:21:59: warning: all parameters should be named in a function [readability-named-parameter]
+void Inventory::DoTransactionCommand(const vector<Movie*>&, const HashTable&) {
+                                                          ^
+                                                           /*unused*/        /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.cpp:30:1: warning: method 'Inventory::getTitleMovie' has a similar name and the same signature as virtual method 'Transaction::GetTitleMovie'; did you mean to override it? [bugprone-virtual-near-miss]
+Movie* Inventory::getTitleMovie() const {
+^                 ~~~~~~~~~~~~~
+                  GetTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.cpp:30:19: warning: method 'getTitleMovie' can be made static [readability-convert-member-functions-to-static]
+Movie* Inventory::getTitleMovie() const {
+                  ^               ~~~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:13:1: warning: #includes are not sorted properly [llvm-include-order]
+#include "Transaction.h"
+^        ~~~~~~~~~~~~~~~
+         "HashTable.h"
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:41:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [cppcoreguidelines-explicit-virtual-functions]
+        virtual bool SetData(ifstream&);
+        ~~~~~~~~     ^
+                                        override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:41:39: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual bool SetData(ifstream&);
+                                      ^
+                                       /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:48:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [modernize-use-override]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+        ~~~~~~~~     ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:48:64: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+                                                               ^
+                                                                /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:56:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [hicpp-use-override]
+        virtual char GetCommand() const;
+        ~~~~~~~~     ^
+                                        override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:63:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [cppcoreguidelines-explicit-virtual-functions]
+        virtual void Display() const;
+        ~~~~~~~~     ^
+                                     override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:70:9: warning: method 'Inventory::getTitleMovie' has a similar name and the same signature as virtual method 'Transaction::GetTitleMovie'; did you mean to override it? [bugprone-virtual-near-miss]
+        Movie* getTitleMovie() const;
+        ^      ~~~~~~~~~~~~~
+               GetTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Inventory.h:73:20: warning: member variable 'Command' has protected visibility [misc-non-private-member-variables-in-classes]
+        const char Command = 'I';
+                   ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:22:8: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+Movie::~Movie() {}
+       ^        ~~
+                = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:28:12: warning: invalid case style for public method 'GetAmountBorrowed' [readability-identifier-naming]
+int Movie::GetAmountBorrowed() const {
+           ^~~~~~~~~~~~~~~~~
+           getAmountBorrowed
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:33:12: warning: invalid case style for public method 'GetInitialStock' [readability-identifier-naming]
+int Movie::GetInitialStock() const {
+           ^~~~~~~~~~~~~~~
+           getInitialStock
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:37:13: warning: invalid case style for public method 'IncramentStock' [readability-identifier-naming]
+void Movie::IncramentStock() {
+            ^~~~~~~~~~~~~~
+            incramentStock
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:41:13: warning: invalid case style for public method 'DecrementStock' [readability-identifier-naming]
+void Movie::DecrementStock() {
+            ^~~~~~~~~~~~~~
+            decrementStock
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:45:15: warning: invalid case style for public method 'GetGenre' [readability-identifier-naming]
+string Movie::GetGenre() {
+              ^~~~~~~~
+              getGenre
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:49:13: warning: invalid case style for public method 'SetData' [readability-identifier-naming]
+bool Movie::SetData(ifstream& FileName) {
+            ^~~~~~~
+            setData
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:58:13: warning: invalid case style for public method 'SetTransactionData' [readability-identifier-naming]
+void Movie::SetTransactionData(ifstream&) {}
+            ^~~~~~~~~~~~~~~~~~
+            setTransactionData
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:58:41: warning: all parameters should be named in a function [readability-named-parameter]
+void Movie::SetTransactionData(ifstream&) {}
+                                        ^
+                                         /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:60:36: warning: all parameters should be named in a function [readability-named-parameter]
+bool Movie::operator==(const Movie&) const {
+                                   ^
+                                    /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:64:35: warning: all parameters should be named in a function [readability-named-parameter]
+bool Movie::operator<(const Movie&) const {
+                                  ^
+                                   /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:68:13: warning: invalid case style for function 'SetDataHelper' [readability-identifier-naming]
+void Movie::SetDataHelper(ifstream& FileName) {
+            ^~~~~~~~~~~~~
+            setDataHelper
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:73:13: warning: invalid case style for function 'SetDirectorHelper' [readability-identifier-naming]
+void Movie::SetDirectorHelper(ifstream& FileName) {
+            ^~~~~~~~~~~~~~~~~
+            setDirectorHelper
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:84:13: warning: invalid case style for function 'SetTitleHelper' [readability-identifier-naming]
+void Movie::SetTitleHelper(ifstream& FileName) {
+            ^~~~~~~~~~~~~~
+            setTitleHelper
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:95:13: warning: invalid case style for public method 'Display' [readability-identifier-naming]
+void Movie::Display() const {
+            ^~~~~~~
+            display
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.cpp:101:15: warning: invalid case style for public method 'TransactionDisplay' [readability-identifier-naming]
+string Movie::TransactionDisplay() const {
+              ^~~~~~~~~~~~~~~~~~
+              transactionDisplay
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:49:13: warning: invalid case style for public method 'GetAmountBorrowed' [readability-identifier-naming]
+        int GetAmountBorrowed() const;
+            ^~~~~~~~~~~~~~~~~
+            getAmountBorrowed
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:56:13: warning: invalid case style for public method 'GetInitialStock' [readability-identifier-naming]
+        int GetInitialStock() const; 
+            ^~~~~~~~~~~~~~~
+            getInitialStock
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:64:14: warning: invalid case style for public method 'IncramentStock' [readability-identifier-naming]
+        void IncramentStock();
+             ^~~~~~~~~~~~~~
+             incramentStock
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:72:14: warning: invalid case style for public method 'DecrementStock' [readability-identifier-naming]
+        void DecrementStock();
+             ^~~~~~~~~~~~~~
+             decrementStock
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:79:24: warning: invalid case style for public method 'GetGenre' [readability-identifier-naming]
+        virtual string GetGenre();
+                       ^~~~~~~~
+                       getGenre
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:86:22: warning: invalid case style for public method 'SetData' [readability-identifier-naming]
+        virtual bool SetData(ifstream&);
+                     ^~~~~~~
+                     setData
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:86:39: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual bool SetData(ifstream&);
+                                      ^
+                                       /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:87:22: warning: invalid case style for public method 'SetTransactionData' [readability-identifier-naming]
+        virtual void SetTransactionData(ifstream&);
+                     ^~~~~~~~~~~~~~~~~~
+                     setTransactionData
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:87:50: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual void SetTransactionData(ifstream&);
+                                                 ^
+                                                  /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:94:45: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual bool operator==(const Movie&) const;
+                                            ^
+                                             /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:95:44: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual bool operator<(const Movie&) const;
+                                           ^
+                                            /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:102:22: warning: invalid case style for public method 'Display' [readability-identifier-naming]
+        virtual void Display() const;
+                     ^~~~~~~
+                     display
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:103:24: warning: invalid case style for public method 'TransactionDisplay' [readability-identifier-naming]
+        virtual string TransactionDisplay() const;
+                       ^~~~~~~~~~~~~~~~~~
+                       transactionDisplay
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:111:14: warning: invalid case style for function 'SetDataHelper' [readability-identifier-naming]
+        void SetDataHelper(ifstream&);
+             ^~~~~~~~~~~~~
+             setDataHelper
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:111:37: warning: all parameters should be named in a function [readability-named-parameter]
+        void SetDataHelper(ifstream&);
+                                    ^
+                                     /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:112:14: warning: invalid case style for function 'SetDirectorHelper' [readability-identifier-naming]
+        void SetDirectorHelper(ifstream&); 
+             ^~~~~~~~~~~~~~~~~
+             setDirectorHelper
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:112:41: warning: all parameters should be named in a function [readability-named-parameter]
+        void SetDirectorHelper(ifstream&); 
+                                        ^
+                                         /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:113:14: warning: invalid case style for function 'SetTitleHelper' [readability-identifier-naming]
+        void SetTitleHelper(ifstream&);
+             ^~~~~~~~~~~~~~
+             setTitleHelper
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:113:38: warning: all parameters should be named in a function [readability-named-parameter]
+        void SetTitleHelper(ifstream&);
+                                     ^
+                                      /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:120:13: warning: member variable 'Stock' has protected visibility [cppcoreguidelines-non-private-member-variables-in-classes]
+        int Stock;
+            ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:121:13: warning: member variable 'InitialStock' has protected visibility [misc-non-private-member-variables-in-classes]
+        int InitialStock;
+            ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:122:16: warning: member variable 'Director' has protected visibility [misc-non-private-member-variables-in-classes]
+        string Director;
+               ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:123:16: warning: member variable 'Title' has protected visibility [cppcoreguidelines-non-private-member-variables-in-classes]
+        string Title;
+               ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Movie.h:124:13: warning: member variable 'Year' has protected visibility [cppcoreguidelines-non-private-member-variables-in-classes]
+        int Year;
+            ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/MovieFactory.cpp:13:15: warning: use '= default' to define a trivial default constructor [modernize-use-equals-default]
+MovieFactory::MovieFactory() {}
+              ^              ~~
+                             = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/MovieFactory.cpp:15:15: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+MovieFactory::~MovieFactory() {}
+              ^               ~~
+                              = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/MovieFactory.h:38:43: warning: all parameters should be named in a function [readability-named-parameter]
+        static Movie* create(const string&);
+                                          ^
+                                           /*Genre*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.cpp:27:10: warning: implicit conversion 'Movie *' -> bool [readability-implicit-bool-conversion]
+    if (!TitleMovie) {
+        ~^
+                    == nullptr
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.cpp:38:10: warning: implicit conversion 'Customer *' -> bool [readability-implicit-bool-conversion]
+    if (!TempCustomer) {
+        ~^
+                      == nullptr
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.cpp:43:9: warning: implicit conversion 'Movie *' -> bool [readability-implicit-bool-conversion]
+    if(!Temp) {
+       ~^
+             == nullptr
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.cpp:48:9: warning: implicit conversion 'Customer *' -> bool [readability-implicit-bool-conversion]
+    if (TempCustomer && Temp) {
+        ^
+        (            != nullptr)
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.cpp:48:25: warning: implicit conversion 'Movie *' -> bool [readability-implicit-bool-conversion]
+    if (TempCustomer && Temp) {
+                        ^
+                        (    != nullptr)
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.cpp:73:1: warning: method 'Return::getTitleMovie' has a similar name and the same signature as virtual method 'Transaction::GetTitleMovie'; did you mean to override it? [bugprone-virtual-near-miss]
+Movie* Return::getTitleMovie() const
+^              ~~~~~~~~~~~~~
+               GetTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:15:1: warning: #includes are not sorted properly [llvm-include-order]
+#include "Transaction.h"
+^        ~~~~~~~~~~~~~~~
+         "HashTable.h"
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:44:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [cppcoreguidelines-explicit-virtual-functions]
+        virtual bool SetData(ifstream&);
+        ~~~~~~~~     ^
+                                        override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:44:39: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual bool SetData(ifstream&);
+                                      ^
+                                       /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:51:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [modernize-use-override]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+        ~~~~~~~~     ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:51:64: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+                                                               ^
+                                                                /*Mov*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:59:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [cppcoreguidelines-explicit-virtual-functions]
+        virtual char GetCommand() const;
+        ~~~~~~~~     ^
+                                        override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:66:22: warning: prefer using 'override' or (rarely) 'final' instead of 'virtual' [cppcoreguidelines-explicit-virtual-functions]
+        virtual void Display() const;
+        ~~~~~~~~     ^
+                                     override
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:73:9: warning: method 'Return::getTitleMovie' has a similar name and the same signature as virtual method 'Transaction::GetTitleMovie'; did you mean to override it? [bugprone-virtual-near-miss]
+        Movie* getTitleMovie() const;
+        ^      ~~~~~~~~~~~~~
+               GetTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Return.h:76:20: warning: member variable 'Command' has protected visibility [cppcoreguidelines-non-private-member-variables-in-classes]
+        const char Command = 'R';
+                   ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.cpp:3:8: warning: use '= default' to define a trivial default constructor [hicpp-use-equals-default]
+Store::Store() {}
+       ^       ~~
+               = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.cpp:35:14: warning: implicit conversion 'Movie *' -> bool [readability-implicit-bool-conversion]
+        if (!Mov) {
+            ~^
+                 == nullptr
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.cpp:87:14: warning: implicit conversion 'Transaction *' -> bool [readability-implicit-bool-conversion]
+        if (!Trans) {
+            ~^
+                   == nullptr
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.cpp:107:13: warning: method 'addInvHelper' can be made static [readability-convert-member-functions-to-static]
+bool Store::addInvHelper(vector<Movie*>& Container, Movie* Mov) {
+            ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.cpp:129:13: warning: method 'lineDiscard' can be made static [readability-convert-member-functions-to-static]
+void Store::lineDiscard(ifstream& FileName) {
+            ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:20:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <set>
+^        ~~~~~
+         <queue>
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:45:45: warning: all parameters should be named in a function [readability-named-parameter]
+        vector<Movie*>& getInv(const string&);
+                                            ^
+                                             /*MovieGenre*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:67:40: warning: all parameters should be named in a function [readability-named-parameter]
+        bool storeBuilder(const string&, const string&, const string&);
+                                       ^
+                                        /*MovieFile*/  /*CustomerFile*/  /*CommandFile*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:82:35: warning: all parameters should be named in a function [readability-named-parameter]
+        void verifyMovie(ifstream&);
+                                  ^
+                                   /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:83:38: warning: all parameters should be named in a function [readability-named-parameter]
+        void verifyCustomer(ifstream&);
+                                     ^
+                                      /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:84:37: warning: all parameters should be named in a function [readability-named-parameter]
+        void verifyCommand(ifstream&);
+                                    ^
+                                     /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:91:27: warning: all parameters should be named in a function [readability-named-parameter]
+        bool addInv(Movie*, const string&);
+                          ^
+                           /*Mov*/        /*MovieGenre*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:98:42: warning: all parameters should be named in a function [readability-named-parameter]
+        bool addInvHelper(vector<Movie*>&, Movie*);
+                                         ^
+                                          /*Container*/  /*Mov*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:98:42: warning: non-const reference parameter at index 0, make it const or use a pointer [google-runtime-references]
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Store.h:105:35: warning: all parameters should be named in a function [readability-named-parameter]
+        void lineDiscard(ifstream&);
+                                  ^
+                                   /*FileName*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:16:14: warning: use '= default' to define a trivial default constructor [modernize-use-equals-default]
+Transaction::Transaction() {}
+             ^             ~~
+                           = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:18:14: warning: use '= default' to define a trivial destructor [modernize-use-equals-default]
+Transaction::~Transaction() {}
+             ^              ~~
+                            = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:20:19: warning: invalid case style for public method 'SetData' [readability-identifier-naming]
+bool Transaction::SetData(ifstream&) {
+                  ^~~~~~~
+                  setData
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:20:36: warning: all parameters should be named in a function [readability-named-parameter]
+bool Transaction::SetData(ifstream&) {
+                                   ^
+                                    /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:24:19: warning: invalid case style for public method 'DoTransactionCommand' [readability-identifier-naming]
+void Transaction::DoTransactionCommand(const vector<Movie*>&, 
+                  ^~~~~~~~~~~~~~~~~~~~
+                  doTransactionCommand
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:24:61: warning: all parameters should be named in a function [readability-named-parameter]
+void Transaction::DoTransactionCommand(const vector<Movie*>&, 
+                                                            ^
+                                                             /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:27:19: warning: invalid case style for public method 'Display' [readability-identifier-naming]
+void Transaction::Display() const {}
+                  ^~~~~~~
+                  display
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:29:19: warning: invalid case style for public method 'GetCommand' [readability-identifier-naming]
+char Transaction::GetCommand() const {
+                  ^~~~~~~~~~
+                  getCommand
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:33:21: warning: invalid case style for public method 'GetTitleMovie' [readability-identifier-naming]
+Movie* Transaction::GetTitleMovie() const {
+                    ^~~~~~~~~~~~~
+                    getTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:37:21: warning: invalid case style for public method 'FindMovie' [readability-identifier-naming]
+Movie* Transaction::FindMovie(const vector<Movie*>& Mov, Movie* Target) const {
+                    ^~~~~~~~~
+                    findMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.cpp:37:21: warning: method 'FindMovie' can be made static [readability-convert-member-functions-to-static]
+Movie* Transaction::FindMovie(const vector<Movie*>& Mov, Movie* Target) const {
+                    ^                                                   ~~~~~~
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:43:22: warning: invalid case style for public method 'SetData' [readability-identifier-naming]
+        virtual bool SetData(ifstream&);
+                     ^~~~~~~
+                     setData
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:43:39: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual bool SetData(ifstream&);
+                                      ^
+                                       /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:50:22: warning: invalid case style for public method 'DoTransactionCommand' [readability-identifier-naming]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+                     ^~~~~~~~~~~~~~~~~~~~
+                     doTransactionCommand
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:50:64: warning: all parameters should be named in a function [readability-named-parameter]
+        virtual void DoTransactionCommand(const vector<Movie*>&, 
+                                                               ^
+                                                                /*unused*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:58:22: warning: invalid case style for public method 'GetCommand' [readability-identifier-naming]
+        virtual char GetCommand() const;
+                     ^~~~~~~~~~
+                     getCommand
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:65:24: warning: invalid case style for public method 'GetTitleMovie' [readability-identifier-naming]
+        virtual Movie* GetTitleMovie() const;
+                       ^~~~~~~~~~~~~
+                       getTitleMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:72:22: warning: invalid case style for public method 'Display' [readability-identifier-naming]
+        virtual void Display() const;
+                     ^~~~~~~
+                     display
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:79:16: warning: invalid case style for public method 'FindMovie' [readability-identifier-naming]
+        Movie* FindMovie(const vector<Movie*>&, Movie*) const;
+               ^~~~~~~~~
+               findMovie
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:79:47: warning: all parameters should be named in a function [readability-named-parameter]
+        Movie* FindMovie(const vector<Movie*>&, Movie*) const;
+                                              ^
+                                               /*Mov*/ /*Target*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/Transaction.h:82:16: warning: member variable 'MediaType' has protected visibility [cppcoreguidelines-non-private-member-variables-in-classes]
+        string MediaType = "D";
+               ^
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/TransactionFactory.cpp:13:21: warning: use '= default' to define a trivial default constructor [hicpp-use-equals-default]
+TransactionFactory::TransactionFactory() {}
+                    ^                    ~~
+                                         = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/TransactionFactory.cpp:15:21: warning: use '= default' to define a trivial destructor [modernize-use-equals-default]
+TransactionFactory::~TransactionFactory() {}
+                    ^                     ~~
+                                          = default;
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/TransactionFactory.h:41:49: warning: all parameters should be named in a function [readability-named-parameter]
+        static Transaction* create(const string&);
+                                                ^
+                                                 /*TransactionType*/
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/store_test.cpp:8:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <iostream>
+^        ~~~~~~~~~~
+         <cassert>
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/store_test.cpp:20:10: warning: invalid case style for variable 'cfile' [readability-identifier-naming]
+  string cfile = "testcommands-1.txt";
+         ^~~~~
+         Cfile
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/store_test.cpp:21:16: warning: invalid case style for variable 'out' [readability-identifier-naming]
+  stringstream out;
+               ^~~
+               Out
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/store_test.cpp:22:12: warning: invalid case style for variable 'fs' [readability-identifier-naming]
+  ifstream fs(cfile);
+           ^~
+           Fs
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/store_test.cpp:24:8: warning: invalid case style for variable 'commandType' [readability-identifier-naming]
+  char commandType;
+       ^~~~~~~~~~~
+       CommandType
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/store_test.cpp:25:10: warning: invalid case style for variable 'discard' [readability-identifier-naming]
+  string discard;
+         ^~~~~~~
+         Discard
+/Users/ali/Documents/UWBYEAR1/CSS343/Assignments/uwb2020wi343b-movies-myousefa/store_test.cpp:31:10: warning: invalid case style for variable 'result' [readability-identifier-naming]
+  string result = "IHHBRIBBIH";
+         ^~~~~~
+         Result
+Suppressed 371617 warnings (371617 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+*** running clang-format format formatting suggestions
+*** formatting suggestions for Borrow.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+14,15c14,15
+<     CustomerID = 0;
+<     titleMovie = nullptr;
+---
+>   CustomerID = 0;
+>   titleMovie = nullptr;
+18,59c18,55
+< Borrow::Borrow(Movie* Mov, int ID) {
+<     CustomerID = ID;
+<     titleMovie = Mov; 
+< }
+< 
+< Borrow::~Borrow() {
+<     delete titleMovie;
+< }
+< 
+< bool Borrow::SetData(ifstream& FileName) {
+<     string Genre;
+<     FileName >> CustomerID >> MediaType >> Genre; 
+<     titleMovie = MovieFactory::create(Genre);
+<     if (titleMovie == nullptr) {
+<         return false;
+<     }
+<     titleMovie->SetTransactionData(FileName);
+<     return true;
+< }
+< 
+< void Borrow::DoTransactionCommand(const vector<Movie*>& Mov, 
+<                                   const HashTable& Customers) {
+<     Customer* TempCustomer; 
+<     TempCustomer = Customers.GetItem(CustomerID);
+<     if (TempCustomer == nullptr) {
+<         cout << "Customer " << CustomerID << " not found!" <<endl;
+<     }
+< 
+<     Movie* Temp = FindMovie(Mov, titleMovie); 
+<     if(Temp == nullptr) {
+<         cout << "Movie " + titleMovie->TransactionDisplay() << 
+<         " not found!" <<endl;
+<     }
+< 
+<     if (TempCustomer != nullptr && Temp != nullptr) {
+<         if (Temp->getStockQuantity() > 0) {
+<             TempCustomer->AddTransactionHistory(this);
+<             Temp->DecrementStock();
+<         }
+<         else {
+<             cout << "This movie has 0 stock." << endl;
+<         }
+---
+> Borrow::Borrow(Movie *Mov, int ID) {
+>   CustomerID = ID;
+>   titleMovie = Mov;
+> }
+> 
+> Borrow::~Borrow() { delete titleMovie; }
+> 
+> bool Borrow::SetData(ifstream &FileName) {
+>   string Genre;
+>   FileName >> CustomerID >> MediaType >> Genre;
+>   titleMovie = MovieFactory::create(Genre);
+>   if (titleMovie == nullptr) {
+>     return false;
+>   }
+>   titleMovie->SetTransactionData(FileName);
+>   return true;
+> }
+> 
+> void Borrow::DoTransactionCommand(const vector<Movie *> &Mov,
+>                                   const HashTable &Customers) {
+>   Customer *TempCustomer;
+>   TempCustomer = Customers.GetItem(CustomerID);
+>   if (TempCustomer == nullptr) {
+>     cout << "Customer " << CustomerID << " not found!" << endl;
+>   }
+> 
+>   Movie *Temp = FindMovie(Mov, titleMovie);
+>   if (Temp == nullptr) {
+>     cout << "Movie " + titleMovie->TransactionDisplay() << " not found!"
+>          << endl;
+>   }
+> 
+>   if (TempCustomer != nullptr && Temp != nullptr) {
+>     if (Temp->getStockQuantity() > 0) {
+>       TempCustomer->AddTransactionHistory(this);
+>       Temp->DecrementStock();
+>     } else {
+>       cout << "This movie has 0 stock." << endl;
+60a57
+>   }
+64,65c61,62
+<     cout << "Borrow: " << MediaType << " " << 
+<     titleMovie->TransactionDisplay() << endl;
+---
+>   cout << "Borrow: " << MediaType << " " << titleMovie->TransactionDisplay()
+>        << endl;
+68,74c65
+< char Borrow::GetCommand() const {
+<   return Command;
+< }
+< 
+< Movie* Borrow::getTitleMovie() const {
+<   return titleMovie;
+< }
+---
+> char Borrow::GetCommand() const { return Command; }
+75a67
+> Movie *Borrow::getTitleMovie() const { return titleMovie; }
+*** formatting suggestions for Classic.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+9c9
+<  * 
+---
+>  *
+11c11
+<  * 
+---
+>  *
+17,19c17
+< Classic::Classic() {
+<     Month = 0;
+< }
+---
+> Classic::Classic() { Month = 0; }
+23,25c21
+< string Classic::GetGenre() {
+<     return Genre;
+< }
+---
+> string Classic::GetGenre() { return Genre; }
+27,33c23,29
+< bool Classic::SetData(ifstream& FileName) {
+<     string Temp;
+<     FileName >> Stock >> Temp;
+<     Movie::SetDataHelper(FileName);
+<     FileName >> ActorFirstName >> ActorLastName >> Month >> Year;
+<     InitialStock = Stock;
+<     return true;
+---
+> bool Classic::SetData(ifstream &FileName) {
+>   string Temp;
+>   FileName >> Stock >> Temp;
+>   Movie::SetDataHelper(FileName);
+>   FileName >> ActorFirstName >> ActorLastName >> Month >> Year;
+>   InitialStock = Stock;
+>   return true;
+36,37c32,33
+< void Classic::SetTransactionData(ifstream& FileName) {
+<     FileName >> Month >> Year >> ActorFirstName >> Year;
+---
+> void Classic::SetTransactionData(ifstream &FileName) {
+>   FileName >> Month >> Year >> ActorFirstName >> Year;
+40,41c36,52
+< bool Classic::operator<(const Movie& Movies) const{
+<     const auto temp = dynamic_cast<const Classic&>(Movies);
+---
+> bool Classic::operator<(const Movie &Movies) const {
+>   const auto temp = dynamic_cast<const Classic &>(Movies);
+> 
+>   if (Year < temp.Year) {
+>     return true;
+>   }
+>   if (Year == temp.Year && Month < temp.Month) {
+>     return true;
+>   }
+>   if (Year == temp.Year && Month == temp.Month &&
+>       ActorFirstName < temp.ActorFirstName) {
+>     return true;
+>   }
+>   return (Year == temp.Year && Month == temp.Month &&
+>           ActorFirstName == temp.ActorFirstName &&
+>           ActorLastName < ActorFirstName);
+> }
+43,62c54,58
+<     if (Year < temp.Year) {
+<         return true;
+<     }
+<     if (Year == temp.Year && Month < temp.Month) {
+<         return true;
+<     }
+<     if (Year == temp.Year && Month == temp.Month && 
+<         ActorFirstName < temp.ActorFirstName) {
+<         return true;
+<     }
+<     return (Year == temp.Year && Month == temp.Month && 
+<             ActorFirstName == temp.ActorFirstName && 
+<             ActorLastName < ActorFirstName);
+< }
+< 
+< bool Classic::operator==(const Movie& Movies) const{
+<     const auto temp = dynamic_cast<const Classic&>(Movies);
+<     return (ActorFirstName == temp.ActorFirstName && 
+<             ActorLastName == temp.ActorLastName &&
+<             Month == temp.Month && Year == temp.Year);
+---
+> bool Classic::operator==(const Movie &Movies) const {
+>   const auto temp = dynamic_cast<const Classic &>(Movies);
+>   return (ActorFirstName == temp.ActorFirstName &&
+>           ActorLastName == temp.ActorLastName && Month == temp.Month &&
+>           Year == temp.Year);
+66,69c62,66
+<     string Actor = ActorFirstName + " " + ActorLastName;
+<     cout << left << setw(35) << Title << setw(19) << Director << setw(3) << 
+<     Month << setw(5) << Year << setw(19) << Actor << "Borrowed: " << setw(3) 
+<     << GetAmountBorrowed() << " " << "Remaining: " << Stock << endl;
+---
+>   string Actor = ActorFirstName + " " + ActorLastName;
+>   cout << left << setw(35) << Title << setw(19) << Director << setw(3) << Month
+>        << setw(5) << Year << setw(19) << Actor << "Borrowed: " << setw(3)
+>        << GetAmountBorrowed() << " "
+>        << "Remaining: " << Stock << endl;
+73,78c70,75
+<     auto Mon = to_string(Month);
+<     auto Yea = to_string(Year);
+<     string temp;
+<     temp += Genre + " " + Mon + " " + Yea + " " + ActorFirstName + " " + 
+<     ActorLastName;
+<     return temp;
+---
+>   auto Mon = to_string(Month);
+>   auto Yea = to_string(Year);
+>   string temp;
+>   temp += Genre + " " + Mon + " " + Yea + " " + ActorFirstName + " " +
+>           ActorLastName;
+>   return temp;
+*** formatting suggestions for Comedy.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of paramaters and returns and what the functions does 
+---
+>  * All descriptions of paramaters and returns and what the functions does
+9c9
+<  * 
+---
+>  *
+11c11
+<  * 
+---
+>  *
+19,24c19,24
+< Comedy::Comedy(int Stk, const string& Drtr, const string& Ttle, int Yea) {
+<     Stock = Stk;
+<     InitialStock = Stock;
+<     Director = Drtr;
+<     Title = Ttle;
+<     Year = Yea;
+---
+> Comedy::Comedy(int Stk, const string &Drtr, const string &Ttle, int Yea) {
+>   Stock = Stk;
+>   InitialStock = Stock;
+>   Director = Drtr;
+>   Title = Ttle;
+>   Year = Yea;
+29,36c29
+< string Comedy::GetGenre() {
+<     return Genre;
+< }
+< 
+< void Comedy::SetTransactionData(ifstream& FileName) {
+<     Movie::SetTitleHelper(FileName);
+<     FileName >> Year;
+< }
+---
+> string Comedy::GetGenre() { return Genre; }
+38,46c31,49
+< bool Comedy::operator<(const Movie& Movies) const {
+<     const auto temp = dynamic_cast<const Comedy&>(Movies);
+<     if (Title < temp.Title) {
+<         return true;
+<     }
+<     if (Title == temp.Title && Year < temp.Year) {
+<         return true;
+<     }
+<     return false;
+---
+> void Comedy::SetTransactionData(ifstream &FileName) {
+>   Movie::SetTitleHelper(FileName);
+>   FileName >> Year;
+> }
+> 
+> bool Comedy::operator<(const Movie &Movies) const {
+>   const auto temp = dynamic_cast<const Comedy &>(Movies);
+>   if (Title < temp.Title) {
+>     return true;
+>   }
+>   if (Title == temp.Title && Year < temp.Year) {
+>     return true;
+>   }
+>   return false;
+> }
+> 
+> bool Comedy::operator==(const Movie &Movies) const {
+>   const auto temp = dynamic_cast<const Comedy &>(Movies);
+>   return (Genre == temp.Genre && Title == temp.Title && Year == temp.Year);
+49,54d51
+< bool Comedy::operator==(const Movie& Movies) const {
+<     const auto temp = dynamic_cast<const Comedy&>(Movies);
+<     return (Genre == temp.Genre && Title == temp.Title && Year == temp.Year);
+< }
+< 
+< 
+56,58c53,55
+<     string temp;
+<     temp += Genre + " " + Title + ", " + to_string(Year);
+<     return temp;
+---
+>   string temp;
+>   temp += Genre + " " + Title + ", " + to_string(Year);
+>   return temp;
+*** formatting suggestions for Customer.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+15,17c15,17
+<     ID = 0;
+<     FirstName = "";
+<     LastName = "";
+---
+>   ID = 0;
+>   FirstName = "";
+>   LastName = "";
+20,23c20,23
+< Customer::~Customer(){
+<     for (auto temp: History) {
+<         delete temp;
+<     }
+---
+> Customer::~Customer() {
+>   for (auto temp : History) {
+>     delete temp;
+>   }
+26,28c26
+< int Customer::GetID() {
+<     return ID;
+< }
+---
+> int Customer::GetID() { return ID; }
+30,31c28,29
+< void Customer::AddTransactionHistory(Transaction* Trans){
+<     History.push_back(Trans);
+---
+> void Customer::AddTransactionHistory(Transaction *Trans) {
+>   History.push_back(Trans);
+34,38c32,36
+< void Customer::DisplayHistory(){
+<     cout << "Customer: " << ID << " History" << endl;
+<     for (auto temp: History) {
+<         temp->Display();
+<     }
+---
+> void Customer::DisplayHistory() {
+>   cout << "Customer: " << ID << " History" << endl;
+>   for (auto temp : History) {
+>     temp->Display();
+>   }
+41,43c39,41
+< bool Customer::SetData(ifstream& FileName) {
+<     FileName >> ID >> LastName >> FirstName;
+<     return (ID >= MINID && ID <= MAXID);
+---
+> bool Customer::SetData(ifstream &FileName) {
+>   FileName >> ID >> LastName >> FirstName;
+>   return (ID >= MINID && ID <= MAXID);
+46,51c44,49
+< bool Customer::isBorrowed(Movie* Mov) {
+<     int Borrowed = 0;
+<     int NotBorrowed = 0;
+<     for (auto temp : History) {
+<         if (temp->GetCommand() == 'B' &&
+<             temp->GetTitleMovie()->TransactionDisplay() == 
+---
+> bool Customer::isBorrowed(Movie *Mov) {
+>   int Borrowed = 0;
+>   int NotBorrowed = 0;
+>   for (auto temp : History) {
+>     if (temp->GetCommand() == 'B' &&
+>         temp->GetTitleMovie()->TransactionDisplay() ==
+53,59c51,55
+<             Borrowed++;
+<         }
+<         else if (temp->GetCommand() == 'R' &&
+<                  temp->GetTitleMovie()->TransactionDisplay() == 
+<                  Mov->TransactionDisplay()) {
+<             NotBorrowed++;
+<         }
+---
+>       Borrowed++;
+>     } else if (temp->GetCommand() == 'R' &&
+>                temp->GetTitleMovie()->TransactionDisplay() ==
+>                    Mov->TransactionDisplay()) {
+>       NotBorrowed++;
+61c57,58
+<     return NotBorrowed < Borrowed;
+---
+>   }
+>   return NotBorrowed < Borrowed;
+63d59
+< 
+*** formatting suggestions for Drama.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of paramaters and returns and what the functions does 
+---
+>  * All descriptions of paramaters and returns and what the functions does
+9c9
+<  * 
+---
+>  *
+11c11
+<  * 
+---
+>  *
+21,23c21
+< string Drama::GetGenre() {
+<     return Genre;
+< }
+---
+> string Drama::GetGenre() { return Genre; }
+25,26c23,24
+< void Drama::SetTransactionData(ifstream& FileName) {
+<     Movie::SetDataHelper(FileName);
+---
+> void Drama::SetTransactionData(ifstream &FileName) {
+>   Movie::SetDataHelper(FileName);
+29,34c27,32
+< bool Drama::operator<(const Movie& Movies) const {
+<     const auto temp = dynamic_cast<const Drama&>(Movies);
+<     if (Director < temp.Director) {
+<         return true;
+<     }
+<     return (Director == temp.Director && Title < temp.Title);
+---
+> bool Drama::operator<(const Movie &Movies) const {
+>   const auto temp = dynamic_cast<const Drama &>(Movies);
+>   if (Director < temp.Director) {
+>     return true;
+>   }
+>   return (Director == temp.Director && Title < temp.Title);
+37,40c35,38
+< bool Drama::operator==(const Movie& Movies) const {
+<     const auto temp = dynamic_cast<const Drama&>(Movies);
+<     return (Genre == temp.Genre && Director == temp.Director && 
+<             Title == temp.Title);
+---
+> bool Drama::operator==(const Movie &Movies) const {
+>   const auto temp = dynamic_cast<const Drama &>(Movies);
+>   return (Genre == temp.Genre && Director == temp.Director &&
+>           Title == temp.Title);
+43d40
+< 
+45,47c42,44
+<     string temp;
+<     temp += Genre + " " + Director + ", " + Title;
+<     return temp;
+---
+>   string temp;
+>   temp += Genre + " " + Director + ", " + Title;
+>   return temp;
+*** formatting suggestions for HashTable.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+11d10
+< #include "Customer.h"
+12a12
+> #include "Customer.h"
+15,18c15,18
+<     NumOfKeys = 0;
+<     for (int I = 0; I < MAXENTRIES; I++) { 
+<         Table[I] = nullptr;
+<     }
+---
+>   NumOfKeys = 0;
+>   for (int I = 0; I < MAXENTRIES; I++) {
+>     Table[I] = nullptr;
+>   }
+21,23c21
+< HashTable::~HashTable() {
+<     clear();
+< }
+---
+> HashTable::~HashTable() { clear(); }
+25,36c23,34
+< bool HashTable::Add(Customer* Cstmr) {
+<     if (Cstmr->GetID() < MINID || Cstmr->GetID() > MAXID) {
+<         return false;
+<     }
+<     if (Table[Hash(Cstmr->GetID())] != nullptr) {
+<         cout << "Customer already exists" << endl;
+<         delete Cstmr;
+<         return false;
+<     }
+<     Table[Hash(Cstmr->GetID())] = Cstmr;
+<     NumOfKeys++;
+<     return true;
+---
+> bool HashTable::Add(Customer *Cstmr) {
+>   if (Cstmr->GetID() < MINID || Cstmr->GetID() > MAXID) {
+>     return false;
+>   }
+>   if (Table[Hash(Cstmr->GetID())] != nullptr) {
+>     cout << "Customer already exists" << endl;
+>     delete Cstmr;
+>     return false;
+>   }
+>   Table[Hash(Cstmr->GetID())] = Cstmr;
+>   NumOfKeys++;
+>   return true;
+39,41c37
+< int HashTable::Hash(int Cstmr) const {
+<   return Cstmr - 1000;
+< }
+---
+> int HashTable::Hash(int Cstmr) const { return Cstmr - 1000; }
+43,47c39,43
+< Customer* HashTable::GetItem(int Cstmr) const {
+<     if (Cstmr < MINID || Cstmr > MAXID) {
+<         return nullptr;
+<     }
+<     return Table[Hash(Cstmr)];
+---
+> Customer *HashTable::GetItem(int Cstmr) const {
+>   if (Cstmr < MINID || Cstmr > MAXID) {
+>     return nullptr;
+>   }
+>   return Table[Hash(Cstmr)];
+51,54c47,50
+<     for (auto temp : Table) {
+<         delete temp;
+<     }
+<     HashTable();
+---
+>   for (auto temp : Table) {
+>     delete temp;
+>   }
+>   HashTable();
+*** formatting suggestions for History.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+13,15c13
+< History::History() {
+<     CustomerID = 0;
+< }
+---
+> History::History() { CustomerID = 0; }
+19,22c17,19
+< bool History::SetData(ifstream& FileName)
+< {
+<     FileName >> CustomerID;
+<     return true;
+---
+> bool History::SetData(ifstream &FileName) {
+>   FileName >> CustomerID;
+>   return true;
+25,31c22,27
+< void History::DoTransactionCommand(const vector<Movie*>&, 
+<                                    const HashTable& Customers)
+< {
+<     Customer* C = Customers.GetItem(CustomerID);
+<     if (C) {
+<         C->DisplayHistory();
+<     }
+---
+> void History::DoTransactionCommand(const vector<Movie *> &,
+>                                    const HashTable &Customers) {
+>   Customer *C = Customers.GetItem(CustomerID);
+>   if (C) {
+>     C->DisplayHistory();
+>   }
+36,39c32
+< char History::GetCommand() const
+< {
+<   return Command;
+< }
+---
+> char History::GetCommand() const { return Command; }
+41,44c34
+< Movie* History::getTitleMovie() const
+< {
+<   return nullptr;
+< }
+---
+> Movie *History::getTitleMovie() const { return nullptr; }
+*** formatting suggestions for Inventory.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+17,26c17,22
+< bool Inventory::SetData(ifstream&) {
+<   return true;
+< }
+< 
+< void Inventory::DoTransactionCommand(const vector<Movie*>&, const HashTable&) {
+< }
+< 
+< char Inventory::GetCommand() const {
+<   return Command;
+< }
+---
+> bool Inventory::SetData(ifstream &) { return true; }
+> 
+> void Inventory::DoTransactionCommand(const vector<Movie *> &,
+>                                      const HashTable &) {}
+> 
+> char Inventory::GetCommand() const { return Command; }
+30,32c26
+< Movie* Inventory::getTitleMovie() const {
+<   return nullptr;
+< }
+\ No newline at end of file
+---
+> Movie *Inventory::getTitleMovie() const { return nullptr; }
+\ No newline at end of file
+*** formatting suggestions for Movie.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+9c9
+<  * 
+---
+>  *
+17,19c17,19
+<     Stock = 0;
+<     InitialStock = 0;
+<     Year = 0;
+---
+>   Stock = 0;
+>   InitialStock = 0;
+>   Year = 0;
+24,26c24
+< int Movie::getStockQuantity() const {
+<     return Stock;
+< }
+---
+> int Movie::getStockQuantity() const { return Stock; }
+29,30c27,28
+<     int BorrowAmount = InitialStock - Stock;
+<     return BorrowAmount;
+---
+>   int BorrowAmount = InitialStock - Stock;
+>   return BorrowAmount;
+33,35c31
+< int Movie::GetInitialStock() const {
+<     return InitialStock;
+< }
+---
+> int Movie::GetInitialStock() const { return InitialStock; }
+37,39c33
+< void Movie::IncramentStock() {
+<     Stock++;
+< }
+---
+> void Movie::IncramentStock() { Stock++; }
+41,43c35
+< void Movie::DecrementStock() {
+<     Stock--;
+< }
+---
+> void Movie::DecrementStock() { Stock--; }
+45,47c37
+< string Movie::GetGenre() {
+<   return string();
+< }
+---
+> string Movie::GetGenre() { return string(); }
+49,55c39,45
+< bool Movie::SetData(ifstream& FileName) {
+<     string Temp;
+<     FileName >> Stock >> Temp;
+<     SetDataHelper(FileName);
+<     FileName >> Year;
+<     InitialStock = Stock;
+<     return true;
+---
+> bool Movie::SetData(ifstream &FileName) {
+>   string Temp;
+>   FileName >> Stock >> Temp;
+>   SetDataHelper(FileName);
+>   FileName >> Year;
+>   InitialStock = Stock;
+>   return true;
+58c48
+< void Movie::SetTransactionData(ifstream&) {}
+---
+> void Movie::SetTransactionData(ifstream &) {}
+60,62c50
+< bool Movie::operator==(const Movie&) const {
+<   return false;
+< }
+---
+> bool Movie::operator==(const Movie &) const { return false; }
+64,66c52
+< bool Movie::operator<(const Movie&) const {
+<   return false;
+< }
+---
+> bool Movie::operator<(const Movie &) const { return false; }
+68,70c54,56
+< void Movie::SetDataHelper(ifstream& FileName) {
+<     SetDirectorHelper(FileName);
+<     SetTitleHelper(FileName);
+---
+> void Movie::SetDataHelper(ifstream &FileName) {
+>   SetDirectorHelper(FileName);
+>   SetTitleHelper(FileName);
+73,81c59,67
+< void Movie::SetDirectorHelper(ifstream& FileName) {
+<     string Temp;
+<     FileName >> Director;
+<     while (Director.back() == ',') { 
+<         FileName >> Temp;
+<         Director += " ";
+<         Director += Temp;
+<     }
+<     Director.pop_back();
+---
+> void Movie::SetDirectorHelper(ifstream &FileName) {
+>   string Temp;
+>   FileName >> Director;
+>   while (Director.back() == ',') {
+>     FileName >> Temp;
+>     Director += " ";
+>     Director += Temp;
+>   }
+>   Director.pop_back();
+84,92c70,78
+< void Movie::SetTitleHelper(ifstream& FileName) {
+<     string Temp;
+<     FileName >> Title;
+<     while (Title.back() == ',') { 
+<         FileName >> Temp;
+<         Title += " ";
+<         Title += Temp;
+<     }
+<     Title.pop_back();
+---
+> void Movie::SetTitleHelper(ifstream &FileName) {
+>   string Temp;
+>   FileName >> Title;
+>   while (Title.back() == ',') {
+>     FileName >> Temp;
+>     Title += " ";
+>     Title += Temp;
+>   }
+>   Title.pop_back();
+96,98c82,85
+<     cout << left << setw(35) << Title << setw(19) << Director << setw(5) <<
+<     Year << " " << "Borrowed: " << setw(3) << GetAmountBorrowed() << " " <<
+<     "Remaining: " << Stock << endl;
+---
+>   cout << left << setw(35) << Title << setw(19) << Director << setw(5) << Year
+>        << " "
+>        << "Borrowed: " << setw(3) << GetAmountBorrowed() << " "
+>        << "Remaining: " << Stock << endl;
+101,103c88
+< string Movie::TransactionDisplay() const {
+<   return string();
+< }
+\ No newline at end of file
+---
+> string Movie::TransactionDisplay() const { return string(); }
+\ No newline at end of file
+*** formatting suggestions for MovieFactory.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+17,28c17,28
+< Movie* MovieFactory::create(const string& Genre) {
+<     if (Genre == "D") {
+<         return new Drama();
+<     }
+<     if (Genre == "F") {
+<         return new Comedy();
+<     }
+<     if (Genre == "C") {
+<         return new Classic();
+<     }
+<     cout << "Invalid Movie!" << endl;
+<     return nullptr;
+---
+> Movie *MovieFactory::create(const string &Genre) {
+>   if (Genre == "D") {
+>     return new Drama();
+>   }
+>   if (Genre == "F") {
+>     return new Comedy();
+>   }
+>   if (Genre == "C") {
+>     return new Classic();
+>   }
+>   cout << "Invalid Movie!" << endl;
+>   return nullptr;
+*** formatting suggestions for Return.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+14,15c14,15
+<     CustomerID = 0;
+<     TitleMovie = nullptr;
+---
+>   CustomerID = 0;
+>   TitleMovie = nullptr;
+18,20c18
+< Return::~Return() {
+<     delete TitleMovie;
+< }
+---
+> Return::~Return() { delete TitleMovie; }
+22,59c20,52
+< bool Return::SetData(ifstream& FileName)
+< {
+<     string Genre;
+<     FileName >> CustomerID >> MediaType >> Genre; 
+<     TitleMovie = MovieFactory::create(Genre);
+<     if (!TitleMovie) {
+<         return false;
+<     }
+<     TitleMovie->SetTransactionData(FileName);
+<     return true;
+< }
+< 
+< void Return::DoTransactionCommand(const vector<Movie*>& Mov, 
+<                                   const HashTable& Customers) {
+<     Customer* TempCustomer; 
+<     TempCustomer = Customers.GetItem(CustomerID);
+<     if (!TempCustomer) {
+<         cout << "Customer " << CustomerID << " not found!" <<endl;
+<     }
+< 
+<     Movie* Temp = FindMovie(Mov, TitleMovie); 
+<     if(!Temp) {
+<         cout << "Movie " + TitleMovie->TransactionDisplay() << 
+<         " not found!" <<endl;
+<     }
+< 
+<     if (TempCustomer && Temp) {
+<         if (TempCustomer->isBorrowed(Temp)) {
+<             TempCustomer->AddTransactionHistory(this);
+<             Temp->IncramentStock();
+<         }
+<         else { 
+<             cout << Temp->TransactionDisplay() + 
+<             " Customer did not borrow this movie!" << endl;
+<         }
+<     }
+<     else {
+<         cout << "Return Failed" << endl;
+---
+> bool Return::SetData(ifstream &FileName) {
+>   string Genre;
+>   FileName >> CustomerID >> MediaType >> Genre;
+>   TitleMovie = MovieFactory::create(Genre);
+>   if (!TitleMovie) {
+>     return false;
+>   }
+>   TitleMovie->SetTransactionData(FileName);
+>   return true;
+> }
+> 
+> void Return::DoTransactionCommand(const vector<Movie *> &Mov,
+>                                   const HashTable &Customers) {
+>   Customer *TempCustomer;
+>   TempCustomer = Customers.GetItem(CustomerID);
+>   if (!TempCustomer) {
+>     cout << "Customer " << CustomerID << " not found!" << endl;
+>   }
+> 
+>   Movie *Temp = FindMovie(Mov, TitleMovie);
+>   if (!Temp) {
+>     cout << "Movie " + TitleMovie->TransactionDisplay() << " not found!"
+>          << endl;
+>   }
+> 
+>   if (TempCustomer && Temp) {
+>     if (TempCustomer->isBorrowed(Temp)) {
+>       TempCustomer->AddTransactionHistory(this);
+>       Temp->IncramentStock();
+>     } else {
+>       cout << Temp->TransactionDisplay() +
+>                   " Customer did not borrow this movie!"
+>            << endl;
+60a54,56
+>   } else {
+>     cout << "Return Failed" << endl;
+>   }
+64,65c60,61
+<   cout << "Return: " << MediaType << " " << 
+<   TitleMovie->TransactionDisplay() << endl;
+---
+>   cout << "Return: " << MediaType << " " << TitleMovie->TransactionDisplay()
+>        << endl;
+68,71c64
+< char Return::GetCommand() const
+< {
+<   return Command;
+< }
+---
+> char Return::GetCommand() const { return Command; }
+73,76c66
+< Movie* Return::getTitleMovie() const
+< {
+<   return TitleMovie;
+< }
+---
+> Movie *Return::getTitleMovie() const { return TitleMovie; }
+*** formatting suggestions for Store.cpp
+6,125c6,97
+<     while(!Commands.empty()) {
+<         auto Temp = Commands.front();
+<         Commands.pop(); 
+<         delete Temp;
+<     }
+<     for (auto Funny : Comedy) {
+<         delete Funny;
+<     }
+<     for (auto Dramas : Drama) {
+<         delete Dramas;
+<     }
+<     for (auto Classics : Classic) {
+<         delete Classics; 
+<     }
+< }
+< 
+< void Store::verifyMovie(ifstream& FileName) {
+<     bool SRead = false;
+<     Movie* Mov = nullptr;
+<     string Genre;
+<     cout << "Reading Movies" << endl;
+< 
+<     for (;;) {
+<         FileName >> Genre;
+<         if (FileName.eof()) {
+<             break;
+<         }
+<         Genre.pop_back();
+<         Mov = MovieFactory::create(Genre);
+<         if (!Mov) {
+<             lineDiscard(FileName);
+<             continue;
+<         }
+<         SRead = Mov->SetData(FileName);
+< 
+<         if (SRead) {
+<             addInv(Mov, Genre);
+<         }
+<         else {
+<             delete Mov;
+<         }
+<     }
+<     cout << "Finished Reading Movies" << endl;
+< }
+< 
+< void Store::verifyCustomer(ifstream& FileName) {
+<     bool SRead = false;
+<     Customer* Cust = nullptr;
+<     cout << "Reading Customers" << endl;
+< 
+<     for (;;) {
+<         Cust = new Customer();
+<         SRead = Cust->SetData(FileName);
+<         if (FileName.eof()) {
+<             delete Cust;
+<             break;
+<         }
+< 
+<         if (SRead) {
+<             Customers.Add(Cust);
+<         }
+<         else {
+<             delete Cust;
+<             cout << "Invalid Customer ID" << endl;
+<         }
+<     }
+<     cout << "Finished Reading Customers" << endl;
+< }
+< 
+< void Store::verifyCommand(ifstream& FileName) {
+<     string Type;
+<     bool SRead = false;
+<     Transaction* Trans = nullptr;
+<     cout << "Reading Commands" << endl;
+< 
+<     for (;;) {
+<         FileName >> Type;
+<         if (FileName.eof()) {
+<             break;
+<         }
+<         Trans = TransactionFactory::create(Type);
+<         if (!Trans) {
+<             lineDiscard(FileName);
+<             continue;
+<         }
+<         SRead = Trans->SetData(FileName);
+<         if (SRead) {
+<             Commands.push(Trans);
+<         }
+<         else {
+<             lineDiscard(FileName);
+<             delete Trans;
+<         }
+<     }
+<     cout << "Finished Reading Commands" << endl;
+< }
+< 
+< bool Store::addInv(Movie* Mov, const string& MovieGenre) {
+<     return addInvHelper(getInv(MovieGenre), Mov);
+< }
+< 
+< bool Store::addInvHelper(vector<Movie*>& Container, Movie* Mov) {
+<     if (Container.empty()) {
+<         Container.push_back(Mov);
+<         return true;
+<     }
+<     auto Iterator = Container.begin();
+<     for (auto Temp : Container) { 
+<         if (*Mov == *Temp) {
+<             delete Mov;
+<             return false;
+<         }
+<         if (*Mov < *Temp) {
+<             Container.insert(Iterator, Mov);
+<             return true;
+<         }
+<         Iterator++;
+<     }
+<     Container.push_back(Mov);
+<     return true;
+---
+>   while (!Commands.empty()) {
+>     auto Temp = Commands.front();
+>     Commands.pop();
+>     delete Temp;
+>   }
+>   for (auto Funny : Comedy) {
+>     delete Funny;
+>   }
+>   for (auto Dramas : Drama) {
+>     delete Dramas;
+>   }
+>   for (auto Classics : Classic) {
+>     delete Classics;
+>   }
+> }
+> 
+> void Store::verifyMovie(ifstream &FileName) {
+>   bool SRead = false;
+>   Movie *Mov = nullptr;
+>   string Genre;
+>   cout << "Reading Movies" << endl;
+> 
+>   for (;;) {
+>     FileName >> Genre;
+>     if (FileName.eof()) {
+>       break;
+>     }
+>     Genre.pop_back();
+>     Mov = MovieFactory::create(Genre);
+>     if (!Mov) {
+>       lineDiscard(FileName);
+>       continue;
+>     }
+>     SRead = Mov->SetData(FileName);
+> 
+>     if (SRead) {
+>       addInv(Mov, Genre);
+>     } else {
+>       delete Mov;
+>     }
+>   }
+>   cout << "Finished Reading Movies" << endl;
+> }
+> 
+> void Store::verifyCustomer(ifstream &FileName) {
+>   bool SRead = false;
+>   Customer *Cust = nullptr;
+>   cout << "Reading Customers" << endl;
+> 
+>   for (;;) {
+>     Cust = new Customer();
+>     SRead = Cust->SetData(FileName);
+>     if (FileName.eof()) {
+>       delete Cust;
+>       break;
+>     }
+> 
+>     if (SRead) {
+>       Customers.Add(Cust);
+>     } else {
+>       delete Cust;
+>       cout << "Invalid Customer ID" << endl;
+>     }
+>   }
+>   cout << "Finished Reading Customers" << endl;
+> }
+> 
+> void Store::verifyCommand(ifstream &FileName) {
+>   string Type;
+>   bool SRead = false;
+>   Transaction *Trans = nullptr;
+>   cout << "Reading Commands" << endl;
+> 
+>   for (;;) {
+>     FileName >> Type;
+>     if (FileName.eof()) {
+>       break;
+>     }
+>     Trans = TransactionFactory::create(Type);
+>     if (!Trans) {
+>       lineDiscard(FileName);
+>       continue;
+>     }
+>     SRead = Trans->SetData(FileName);
+>     if (SRead) {
+>       Commands.push(Trans);
+>     } else {
+>       lineDiscard(FileName);
+>       delete Trans;
+>     }
+>   }
+>   cout << "Finished Reading Commands" << endl;
+128,130c100,101
+< 
+< void Store::lineDiscard(ifstream& FileName) {
+<     FileName.ignore(1000, '\n');
+---
+> bool Store::addInv(Movie *Mov, const string &MovieGenre) {
+>   return addInvHelper(getInv(MovieGenre), Mov);
+133,143c104,137
+< vector<Movie*>& Store::getInv(const string& MovieGenre) {
+<     if (MovieGenre == "F") {
+<         return Comedy;
+<     }
+<     if (MovieGenre == "D") {
+<         return Drama;
+<     }
+<     if (MovieGenre == "C") {
+<         return Classic;
+<     }
+<     return Temporary;
+---
+> bool Store::addInvHelper(vector<Movie *> &Container, Movie *Mov) {
+>   if (Container.empty()) {
+>     Container.push_back(Mov);
+>     return true;
+>   }
+>   auto Iterator = Container.begin();
+>   for (auto Temp : Container) {
+>     if (*Mov == *Temp) {
+>       delete Mov;
+>       return false;
+>     }
+>     if (*Mov < *Temp) {
+>       Container.insert(Iterator, Mov);
+>       return true;
+>     }
+>     Iterator++;
+>   }
+>   Container.push_back(Mov);
+>   return true;
+> }
+> 
+> void Store::lineDiscard(ifstream &FileName) { FileName.ignore(1000, '\n'); }
+> 
+> vector<Movie *> &Store::getInv(const string &MovieGenre) {
+>   if (MovieGenre == "F") {
+>     return Comedy;
+>   }
+>   if (MovieGenre == "D") {
+>     return Drama;
+>   }
+>   if (MovieGenre == "C") {
+>     return Classic;
+>   }
+>   return Temporary;
+146,148c140
+< HashTable& Store::getCustomers() {
+<     return Customers;
+< }
+---
+> HashTable &Store::getCustomers() { return Customers; }
+151,185c143,176
+<     cout << " ------------------------------------------" << endl;
+<     cout << "Comedies: " << endl;
+<     for (auto Funny : Comedy) {
+<         Funny->Display();
+<     }
+<     cout << " ------------------------------------------" << endl;
+<     cout << "Dramas: " << endl;
+<     for (auto Dramas : Drama) {
+<         Dramas->Display();
+<     }
+<     cout << " ------------------------------------------" << endl;
+<     cout << "Classic: " << endl;
+<     for (auto Classics : Classic) {
+<         Classics->Display();
+<     }
+<     cout << " ------------------------------------------" << endl;
+< }
+< 
+< bool Store::storeBuilder(const string& MovieFile, const string& CustomerFile, 
+<                          const string& CommandFile) {
+<     cout << "BUILD STORE" << endl;
+<     ifstream MFile(MovieFile);
+<     ifstream CFile(CustomerFile);
+<     ifstream ComFile(CommandFile);
+< 
+<     if (!MFile || !CFile || !ComFile) {
+<         cout << "Files not found" << endl;
+<         return false;
+<     }
+<     verifyMovie(MFile);
+<     verifyCustomer(CFile);
+<     verifyCommand(ComFile);
+<     cout << "Store Built -- Done" << endl;
+<     return true;
+< 
+---
+>   cout << " ------------------------------------------" << endl;
+>   cout << "Comedies: " << endl;
+>   for (auto Funny : Comedy) {
+>     Funny->Display();
+>   }
+>   cout << " ------------------------------------------" << endl;
+>   cout << "Dramas: " << endl;
+>   for (auto Dramas : Drama) {
+>     Dramas->Display();
+>   }
+>   cout << " ------------------------------------------" << endl;
+>   cout << "Classic: " << endl;
+>   for (auto Classics : Classic) {
+>     Classics->Display();
+>   }
+>   cout << " ------------------------------------------" << endl;
+> }
+> 
+> bool Store::storeBuilder(const string &MovieFile, const string &CustomerFile,
+>                          const string &CommandFile) {
+>   cout << "BUILD STORE" << endl;
+>   ifstream MFile(MovieFile);
+>   ifstream CFile(CustomerFile);
+>   ifstream ComFile(CommandFile);
+> 
+>   if (!MFile || !CFile || !ComFile) {
+>     cout << "Files not found" << endl;
+>     return false;
+>   }
+>   verifyMovie(MFile);
+>   verifyCustomer(CFile);
+>   verifyCommand(ComFile);
+>   cout << "Store Built -- Done" << endl;
+>   return true;
+189,206c180,193
+<     cout << "Begin Executing Command" << endl;
+<     while(!Commands.empty()) {
+<         auto Temp = Commands.front();
+<         Commands.pop();
+<         char C = Temp->GetCommand();
+<         if (C == 'I') {
+<             displayInv();
+<             delete Temp;
+<         }
+<         else if (C == 'H') {
+<             Temp->DoTransactionCommand(Temporary, Customers);
+<             delete Temp;
+<         }
+<         else {
+<             Temp->DoTransactionCommand(getInv(
+<             Temp->GetTitleMovie()->GetGenre()), Customers);
+<         }
+<     cout << "Finished Execution" << endl;
+---
+>   cout << "Begin Executing Command" << endl;
+>   while (!Commands.empty()) {
+>     auto Temp = Commands.front();
+>     Commands.pop();
+>     char C = Temp->GetCommand();
+>     if (C == 'I') {
+>       displayInv();
+>       delete Temp;
+>     } else if (C == 'H') {
+>       Temp->DoTransactionCommand(Temporary, Customers);
+>       delete Temp;
+>     } else {
+>       Temp->DoTransactionCommand(getInv(Temp->GetTitleMovie()->GetGenre()),
+>                                  Customers);
+207a195,196
+>     cout << "Finished Execution" << endl;
+>   }
+*** formatting suggestions for Transaction.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+9c9
+<  * 
+---
+>  *
+13d12
+< #include "HashTable.h"
+14a14
+> #include "HashTable.h"
+20,22c20
+< bool Transaction::SetData(ifstream&) {
+<   return false;
+< }
+---
+> bool Transaction::SetData(ifstream &) { return false; }
+24,25c22,23
+< void Transaction::DoTransactionCommand(const vector<Movie*>&, 
+<                                        const HashTable&) {}
+---
+> void Transaction::DoTransactionCommand(const vector<Movie *> &,
+>                                        const HashTable &) {}
+29,31c27
+< char Transaction::GetCommand() const {
+<     return ' ';
+< }
+---
+> char Transaction::GetCommand() const { return ' '; }
+33,35c29
+< Movie* Transaction::GetTitleMovie() const {
+<     return nullptr;
+< }
+---
+> Movie *Transaction::GetTitleMovie() const { return nullptr; }
+37,42c31,36
+< Movie* Transaction::FindMovie(const vector<Movie*>& Mov, Movie* Target) const {
+<     for (auto I : Mov)
+<         if (*Target == *I) {
+<             return I;
+<         }
+<     return nullptr;
+---
+> Movie *Transaction::FindMovie(const vector<Movie *> &Mov, Movie *Target) const {
+>   for (auto I : Mov)
+>     if (*Target == *I) {
+>       return I;
+>     }
+>   return nullptr;
+*** formatting suggestions for TransactionFactory.cpp
+3c3
+<  * CSS 343 Yusuf Pisan 
+---
+>  * CSS 343 Yusuf Pisan
+5c5
+<  * 
+---
+>  *
+7c7
+<  * All descriptions of pramaters and returns and what the functions do 
+---
+>  * All descriptions of pramaters and returns and what the functions do
+17,31c17,31
+< Transaction* TransactionFactory::create(const string& TransactionType) {
+<     if (TransactionType == "B") { 
+<         return new Borrow();
+<     }
+<     if (TransactionType == "R") { 
+<         return new Return();
+<     }
+<     if (TransactionType == "H") { 
+<         return new History();
+<     }
+<     if (TransactionType == "I") { 
+<         return new Inventory();
+<     }
+<     cout << "Invalid command!" << endl;
+<     return nullptr;
+---
+> Transaction *TransactionFactory::create(const string &TransactionType) {
+>   if (TransactionType == "B") {
+>     return new Borrow();
+>   }
+>   if (TransactionType == "R") {
+>     return new Return();
+>   }
+>   if (TransactionType == "H") {
+>     return new History();
+>   }
+>   if (TransactionType == "I") {
+>     return new Inventory();
+>   }
+>   cout << "Invalid command!" << endl;
+>   return nullptr;
+*** formatting suggestions for main.cpp
+5d4
+< 
+*** formatting suggestions for store_test.cpp
+7a8,9
+> #include <cassert>
+> #include <fstream>
+11,12d12
+< #include <fstream>
+< #include <cassert>
+*** ERROR valgrind is not available on this system
+*** cleaning up, deleting myprogram
+Thu Mar 12 23:35:05 PDT 2020
